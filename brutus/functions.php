@@ -149,6 +149,11 @@ function brutus_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'brutus_scripts' );
 
+function add_custom_style() {
+	wp_enqueue_style( 'brutus-custom-style', get_template_directory_uri() . '/custom-style.css' );
+}
+add_action( 'wp_enqueue_scripts', add_custom_style );
+
 /**
  * Implement the Custom Header feature.
  */
