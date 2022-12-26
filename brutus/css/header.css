@@ -1,0 +1,30 @@
+/* Styles for creativehubs.gr header */
+
+.site-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em 1em;
+}
+
+.site-branding {
+	width: 30%;
+	height: 30%;
+}
+
+.main-navigation {
+	width: unset;
+}
+
+.menu-item {
+	padding: 0.75em;
+
+	font-family: Roboto;
+	font-weight: 700;
+	color: black;
+	font-size: 1.5rem;
+}
+
+.menu-item:visited, .menu-item:active, .menu-item:hover {
+	color: black;
+}
