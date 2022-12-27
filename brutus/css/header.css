@@ -27,3 +27,10 @@ img[alt="EN"], img[alt="ΕΛ"] {
 	width: 19px !important;
 	height: 13px !important;
 }
+
+@media only screen and (max-width: 768px) {
+	.site-branding {
+		width: 50%;
+		height: 50%;
+	}
+}
