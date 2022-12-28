@@ -19,10 +19,6 @@
 }
 
 /* Desktop Navigation */
-.main-navigation {
-	width: unset;
-}
-
 .menu-item {
 	padding: 0.75em;
 	font-family: "Segoe UI";
@@ -33,6 +29,7 @@
 /* Mobile Navigation */
 .hamburger-container {
 	display: block;
+	width: max-content;
 	cursor: pointer;
 }
 
