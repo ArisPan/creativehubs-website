@@ -546,7 +546,7 @@ a:active {
 	color: #000;
 	transition: 0.5s;
 	text-shadow: -0.03ex 0 0 currentColor, 0.03ex 0 0 currentColor;
-	-webkit-text-stroke-width: 0.08ex;
+	-webkit-text-stroke-width: 0.04ex;
 }
 
 a:focus {
