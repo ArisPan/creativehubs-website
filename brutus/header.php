@@ -50,7 +50,7 @@
 				<div class="hamburger-bar-1"></div>
 				<div class="hamburger-bar-2"></div>
 				<div class="hamburger-bar-3"></div>
-			</div>
+			</div><!-- .hamburger-container -->
 			<?php
 			wp_nav_menu(
 				array(
