@@ -1,4 +1,5 @@
-/* Styles for creativehubs.gr header */
+/* Header styles
+	 ========================================================================== */
 .site-header {
 	display: flex;
 	justify-content: space-between;
@@ -6,19 +7,6 @@
 	padding: 1em 1em;
 }
 
-.site-branding {
-	width: 20%;
-	height: 20%;
-}
-
-@media only screen and (max-width: 768px) {
-	.site-branding {
-		width: 50%;
-		height: 50%;
-	}
-}
-
-/* Desktop Navigation */
 .menu-item {
 	padding: 0.75em;
 	font-family: 'Roboto Mono', monospace;
@@ -26,17 +14,23 @@
 	font-size: 1.125rem;
 }
 
-/* Mobile Navigation */
+/* Mobile */
+/* Logo */
+.site-branding {
+	width: 50%;
+	height: 50%;
+}
+
+/* On mobile, hide the span devider between language switcher and menu items.  */
+#nav-divider {
+	display: none;
+}
+
+/* Navigation */
 .hamburger-container {
 	display: block;
 	width: max-content;
 	cursor: pointer;
-}
-
-@media only screen and (min-width: 768px) {
-	.hamburger-container {
-		display: none;
-	}
 }
 
 .hamburger-bar-1, .hamburger-bar-2, .hamburger-bar-3 {
@@ -57,6 +51,38 @@
 
 .change-hamburger .hamburger-bar-3 {
 	transform: translate(0, -11px) rotate(45deg);
+}
+
+/* Desktop */
+@media only screen and (min-width: 768px) {
+	/* Button for Catalog (EN and ΕΛ) */
+	#menu-item-563, #menu-item-564 {
+		border-style: solid;
+		border-width: 2px;
+		margin-left: 1em;
+		padding: 7px;
+	}
+
+	#nav-divider {
+		display: inline;
+		width: 0.125em;
+		height: 2em;
+		background-color: black;
+		margin-left: 1.5em;
+		margin-right: 1.5em;
+	}
+
+	.hamburger-container {
+		display: none;
+	}
+}
+
+/* Logo */
+@media only screen and (min-width: 768px) {
+	.site-branding {
+		width: 20%;
+		height: 20%;
+	}
 }
 
 /* Flags and Language */
