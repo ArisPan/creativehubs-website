@@ -744,7 +744,8 @@ textarea {
 	display: inline-block;
 }
 
-@media screen and (min-width: 37.5em) {
+/* The following rule used to have min-width set to 37.5em or 600px */
+@media screen and (min-width: 768px) {
 
 	.menu-toggle {
 		display: none;
