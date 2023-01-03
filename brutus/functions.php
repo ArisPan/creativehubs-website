@@ -153,6 +153,7 @@ add_action( 'wp_enqueue_scripts', 'brutus_scripts' );
 function add_custom_styles() {
 	wp_enqueue_style( 'brutus-custom-header-style', get_template_directory_uri() . '/css/header.css' );
 	wp_enqueue_style( 'brutus-custom-footer-style', get_template_directory_uri() . '/css/footer.css' );
+	wp_enqueue_style( 'brutus-custom-front-page-style', get_template_directory_uri() . '/css/front-page.css' );
 }
 add_action( 'wp_enqueue_scripts', add_custom_styles );
 
