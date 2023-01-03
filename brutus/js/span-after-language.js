@@ -21,7 +21,7 @@
 	if ( ! primaryMenu ) {
 		return;
 	}
-    // Get last language item
+    // Get first non-language menu item
     var firstNoneLanguageMenuItem = primaryMenu.children[2];
 
     // Create the new span element.
