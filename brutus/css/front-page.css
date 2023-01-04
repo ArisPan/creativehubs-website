@@ -1,15 +1,29 @@
 /* Front page styles
 	 ========================================================================== */
 .front-page-header .title {
-    color: black;
     padding: 1rem 1rem 0.25rem 1rem;
     margin: unset;
+
+    font-size: 2.5rem;
+    font-weight: 200;
+    color: black;
 }
 
 .front-page-header .text {
     display: block;
     padding-left: 1rem;
 
-    font-size: 1.25rem;
+    font-weight: 300;
     color: black;
+}
+
+/* Desktop */
+@media only screen and (min-width: 768px) {
+    .front-page-header .title {
+        font-size: 3rem;
+    }
+
+    .front-page-header .text {
+        font-size: 1.25rem;
+    }
 }
