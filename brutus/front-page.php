@@ -26,10 +26,12 @@
     <!-- Our custom front page markup -->
     <header class="front-page-header">
         <h1 class="title">Creative@Hubs</h1>
-        <!-- <p> -->
-            <span class="text">Ολιστική δικτύωση δημιουργικών ΜμΕ</span>
-            <span class="text">μέσω συνεργατικών χώρων δημιουργικών επιχειρήσεων</span>
-        <!-- </p> -->
+        <span class="text">Ολιστική δικτύωση δημιουργικών ΜμΕ</span>
+        <span class="text">μέσω συνεργατικών χώρων δημιουργικών επιχειρήσεων</span>
+        <div class="button-container">
+            <button>Δες τον Κατάλογο</button>
+            <button>Μάθε περισσότερα</button>
+        </div>
     </header>
     <?php
     }
