@@ -1,5 +1,15 @@
 /* Front page styles
 	 ========================================================================== */
-.hero-text {
+.front-page-header .title {
+    color: black;
+    padding: 1rem 1rem 0.25rem 1rem;
+    margin: unset;
+}
+
+.front-page-header .text {
+    display: block;
+    padding-left: 1rem;
+
+    font-size: 1.25rem;
     color: black;
 }
