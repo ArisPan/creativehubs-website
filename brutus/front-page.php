@@ -24,8 +24,12 @@
     } else {
     ?>
     <!-- Our custom front page markup -->
-    <header>
-        <h1 class="hero-text screen-reader-text">Creative@Hubs</h1>
+    <header class="front-page-header">
+        <h1 class="title">Creative@Hubs</h1>
+        <!-- <p> -->
+            <span class="text">Ολιστική δικτύωση δημιουργικών ΜμΕ</span>
+            <span class="text">μέσω συνεργατικών χώρων δημιουργικών επιχειρήσεων</span>
+        <!-- </p> -->
     </header>
     <?php
     }
