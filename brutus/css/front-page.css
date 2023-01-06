@@ -1,6 +1,7 @@
 /* Front page styles
 	 ========================================================================== */
 .front-page-header .title {
+    text-align: center;
     padding: 1rem 1rem 0.25rem 1rem;
     margin: unset;
 
@@ -11,7 +12,9 @@
 
 .front-page-header .text {
     display: block;
+    text-align: center;
     padding-left: 1rem;
+    padding-right: 1rem;
 
     font-weight: 300;
     color: black;
@@ -19,17 +22,13 @@
 
 .button-container {
     margin-top: 1rem;
-}
-
-.button-container>:first-child {
-    margin-left: 1rem;
+    text-align: center;
 }
 
 /* For really small screens, place the second button under the first */
 @media only screen and (max-width: 380px) {
     .button-container>:nth-child(2) {
-        margin-top: 1rem;
-        margin-left: 1rem;
+        margin: 1rem auto 0 auto;
     }
 }
 
