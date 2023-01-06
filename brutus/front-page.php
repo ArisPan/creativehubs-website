@@ -26,12 +26,28 @@
     <!-- Our custom front page markup -->
     <header class="front-page-header">
         <h1 class="title">Creative@Hubs</h1>
-        <span class="text">
-            <?php esc_html_e( 'Ολιστική δικτύωση δημιουργικών ΜμΕ', 'brutus' ) ?>
-        </span>
-        <span class="text">
-            <?php esc_html_e( 'μέσω συνεργατικών χώρων δημιουργικών επιχειρήσεων', 'brutus' ) ?> 
-        </span>
+        <?php
+            $locale =  get_bloginfo('language');
+            // If the chosen language is English, display the intro text in one line.
+            // This one line will be translated separately
+            if ($locale == 'en-US') {
+                ?>
+                <span class="text">
+                    <?php esc_html_e( 'Ολιστική δικτύωση δημιουργικών ΜμΕ μέσω συνεργατικών χώρων δημιουργικών επιχειρήσεων', 'brutus' ) ?>
+                </span>
+                <?php
+            }
+            else {
+                ?>
+                <span class="text">
+                    <?php esc_html_e( 'Ολιστική δικτύωση δημιουργικών ΜμΕ', 'brutus' ) ?>
+                </span>
+                <span class="text">
+                    <?php esc_html_e( 'μέσω συνεργατικών χώρων δημιουργικών επιχειρήσεων', 'brutus' ) ?> 
+                </span>
+                <?php
+            }
+        ?>
         <div class="button-container">
             <?php
                 // Change home page action links' href based on user's language.
@@ -39,7 +55,6 @@
                 $catalog_href = 'https://creativehubs.gr/el/%ce%ba%ce%b1%cf%84%ce%ac%ce%bb%ce%bf%ce%b3%ce%bf%cf%82/';
                 $about_href = 'https://creativehubs.gr/el/%cf%83%cf%87%ce%b5%cf%84%ce%b9%ce%ba%ce%ac/';
 
-                $locale =  get_bloginfo('language');
                 if ($locale == 'en-US') {
                     $catalog_href = 'https://creativehubs.gr/en/catalog/';
                     $about_href = 'https://creativehubs.gr/en/about/';
