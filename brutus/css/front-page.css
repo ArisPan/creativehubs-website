@@ -26,7 +26,7 @@
 }
 
 /* For really small screens, place the second button under the first */
-@media only screen and (max-width: 355px) {
+@media only screen and (max-width: 380px) {
     .button-container>:nth-child(2) {
         margin-top: 1rem;
         margin-left: 1rem;
