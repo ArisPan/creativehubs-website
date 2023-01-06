@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-01-06T18:00:38+00:00\n"
+"POT-Creation-Date: 2023-01-06T19:14:42+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: brutus\n"
@@ -65,27 +65,31 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: front-page.php:30
+#: front-page.php:35
+msgid "Ολιστική δικτύωση δημιουργικών ΜμΕ μέσω συνεργατικών χώρων δημιουργικών επιχειρήσεων"
+msgstr ""
+
+#: front-page.php:42
 msgid "Ολιστική δικτύωση δημιουργικών ΜμΕ"
 msgstr ""
 
-#: front-page.php:33
+#: front-page.php:45
 msgid "μέσω συνεργατικών χώρων δημιουργικών επιχειρήσεων"
 msgstr ""
 
-#: front-page.php:48
+#: front-page.php:62
 msgid "Κατάλογος"
 msgstr ""
 
-#: front-page.php:49
+#: front-page.php:63
 msgid "Δες τον κατάλογο"
 msgstr ""
 
-#: front-page.php:51
+#: front-page.php:65
 msgid "Σχετικά"
 msgstr ""
 
-#: front-page.php:52
+#: front-page.php:66
 msgid "Μάθε περισσότερα"
 msgstr ""
 
