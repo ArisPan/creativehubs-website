@@ -26,11 +26,31 @@
     <!-- Our custom front page markup -->
     <header class="front-page-header">
         <h1 class="title">Creative@Hubs</h1>
-        <span class="text">Ολιστική δικτύωση δημιουργικών ΜμΕ</span>
-        <span class="text">μέσω συνεργατικών χώρων δημιουργικών επιχειρήσεων</span>
+        <span class="text">
+            <?php esc_html_e( 'Ολιστική δικτύωση δημιουργικών ΜμΕ', 'brutus' ) ?>
+        </span>
+        <span class="text">
+            <?php esc_html_e( 'μέσω συνεργατικών χώρων δημιουργικών επιχειρήσεων', 'brutus' ) ?> 
+        </span>
         <div class="button-container">
-            <button>Δες τον Κατάλογο</button>
-            <button>Μάθε περισσότερα</button>
+            <?php
+                // Change home page action links' href based on user's language.
+                // Default Catalog and About page redirects in Greek.
+                $catalog_href = 'https://creativehubs.gr/el/%ce%ba%ce%b1%cf%84%ce%ac%ce%bb%ce%bf%ce%b3%ce%bf%cf%82/';
+                $about_href = 'https://creativehubs.gr/el/%cf%83%cf%87%ce%b5%cf%84%ce%b9%ce%ba%ce%ac/';
+
+                $locale =  get_bloginfo('language');
+                if ($locale == 'en-US') {
+                    $catalog_href = 'https://creativehubs.gr/en/catalog/';
+                    $about_href = 'https://creativehubs.gr/en/about/';
+                }
+            ?>
+            <a title="<?php esc_html_e( 'Κατάλογος', 'brutus' ) ?>" href="<?php echo $catalog_href ?>">
+                <?php esc_html_e( 'Δες τον κατάλογο', 'brutus' ) ?>
+            </a>
+            <a title="<?php esc_html_e( 'Σχετικά', 'brutus' ) ?>" href="<?php echo $about_href ?>">
+                <?php esc_html_e( 'Μάθε περισσότερα', 'brutus' ) ?>
+            </a>
         </div>
     </header>
     <?php
