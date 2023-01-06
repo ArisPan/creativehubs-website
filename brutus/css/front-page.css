@@ -17,6 +17,30 @@
     color: black;
 }
 
+.button-container {
+    margin-top: 1rem;
+}
+
+.button-container>:first-child {
+    margin-left: 1rem;
+}
+
+/* For really small screens, place the second button under the first */
+@media only screen and (max-width: 355px) {
+    .button-container>:nth-child(2) {
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+}
+
+.button-container a {
+    display: inline-block;
+    padding: 0.5rem;
+
+    border: 0.125rem solid black;
+    text-decoration: none;
+}
+
 /* Desktop */
 @media only screen and (min-width: 768px) {
     .front-page-header .title {
