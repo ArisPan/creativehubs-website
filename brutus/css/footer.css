@@ -4,6 +4,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    margin-top: 2rem;
 }
 
 .social a {
@@ -12,10 +14,12 @@
 }
 
 .site-info #title {
-    color: black;
+    margin-top: 0;
+    margin-bottom: 1rem;
+
     font-size: 1.75rem;
     font-weight: 500;
-    margin-bottom: 1rem;
+    color: black;
 }
 
 .social svg {
@@ -29,6 +33,13 @@
 
 /* Desktop styles */
 @media only screen and (min-width: 768px) {
+    .site-info {
+        flex-direction: row;
+        justify-content: space-between;
+
+        padding: 2rem 1rem 1rem 1rem;
+    }
+
     .site-info #title {
         font-size: 2rem;
         font-weight: 400;
