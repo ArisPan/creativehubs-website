@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: brutus 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/brutus\n"
-"POT-Creation-Date: 2023-01-06T18:00:38+00:00\n"
-"PO-Revision-Date: 2023-01-06 20:36+0200\n"
+"POT-Creation-Date: 2023-01-06T19:14:42+00:00\n"
+"PO-Revision-Date: 2023-01-06 21:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -69,27 +69,33 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: front-page.php:30
+#: front-page.php:35
+msgid ""
+"Ολιστική δικτύωση δημιουργικών ΜμΕ μέσω συνεργατικών χώρων δημιουργικών "
+"επιχειρήσεων"
+msgstr "Holistic networking of creative industries via hubs"
+
+#: front-page.php:42
 msgid "Ολιστική δικτύωση δημιουργικών ΜμΕ"
 msgstr "Holistic networking of creative industries"
 
-#: front-page.php:33
+#: front-page.php:45
 msgid "μέσω συνεργατικών χώρων δημιουργικών επιχειρήσεων"
 msgstr "via hubs"
 
-#: front-page.php:48
+#: front-page.php:62
 msgid "Κατάλογος"
 msgstr "Catalog"
 
-#: front-page.php:49
+#: front-page.php:63
 msgid "Δες τον κατάλογο"
 msgstr "Go to Catalog"
 
-#: front-page.php:51
+#: front-page.php:65
 msgid "Σχετικά"
 msgstr "About"
 
-#: front-page.php:52
+#: front-page.php:66
 msgid "Μάθε περισσότερα"
 msgstr "Learn more"
 
