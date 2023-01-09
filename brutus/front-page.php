@@ -49,21 +49,21 @@
             }
         ?>
         <div class="button-container">
+            <!-- Change home page action links' href based on user's language. -->
             <?php
-                // Change home page action links' href based on user's language.
                 // Default Catalog and About page redirects in Greek.
-                $catalog_href = 'https://creativehubs.gr/el/%ce%ba%ce%b1%cf%84%ce%ac%ce%bb%ce%bf%ce%b3%ce%bf%cf%82/';
-                $about_href = 'https://creativehubs.gr/el/%cf%83%cf%87%ce%b5%cf%84%ce%b9%ce%ba%ce%ac/';
+                $catalog_href = 'https://creativehubs.gr/el/catalog/';
+                $about_href = 'https://creativehubs.gr/el/about/';
 
                 if ($locale == 'en-US') {
                     $catalog_href = 'https://creativehubs.gr/en/catalog/';
                     $about_href = 'https://creativehubs.gr/en/about/';
                 }
             ?>
-            <a title="<?php esc_html_e( 'Κατάλογος', 'brutus' ) ?>" href="<?php echo $catalog_href ?>">
+            <a title="<?php esc_html_e( 'Κατάλογος', 'brutus' ) ?>" href="<?php echo esc_url( $catalog_href ) ?>">
                 <?php esc_html_e( 'Δες τον κατάλογο', 'brutus' ) ?>
             </a>
-            <a title="<?php esc_html_e( 'Σχετικά', 'brutus' ) ?>" href="<?php echo $about_href ?>">
+            <a title="<?php esc_html_e( 'Σχετικά', 'brutus' ) ?>" href="<?php echo esc_url( $about_href ) ?>">
                 <?php esc_html_e( 'Μάθε περισσότερα', 'brutus' ) ?>
             </a>
         </div>
