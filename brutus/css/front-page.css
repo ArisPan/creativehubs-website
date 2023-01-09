@@ -1,5 +1,14 @@
 /* Front page styles
 	 ========================================================================== */
+.site-main {
+    /* To get the footer to stick to the bottom of the page when not enough content is present,
+	   we wrap the vertical section in a flex container (here, .site in header.css) and expand 
+       the main content container (here, .site-main).
+	   For more, check: https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
+	 */
+    flex: 1;
+}
+
 .front-page-header .title {
     text-align: center;
     padding: 1rem 1rem 0.25rem 1rem;
