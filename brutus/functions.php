@@ -154,21 +154,22 @@ function add_custom_styles() {
 	wp_enqueue_style( 'brutus-custom-header-style', get_template_directory_uri() . '/css/header.css' );
 	wp_enqueue_style( 'brutus-custom-footer-style', get_template_directory_uri() . '/css/footer.css' );
 	wp_enqueue_style( 'brutus-custom-front-page-style', get_template_directory_uri() . '/css/front-page.css' );
+	// $catalog_english_page_id = 561;
+	// update_post_meta( $catalog_english_page_id, '_wp_page_template', 'page-katalogos.php' );
 }
 add_action( 'wp_enqueue_scripts', add_custom_styles );
 
 /**
  * Each page appears twice, once for each language (Greek and English).
- * We will be creating a single template (targeting one language) for each set of pages in which
- * we will be adding the correct gettext functions to provide a translation via .mo
+ * We will be creating a single template (targeting greek) for each set of pages in which
+ * we will be adding the correct gettext functions to provide a translation via .mo/.po
  * 
  * Then, set_custom_templates() will set this template on the other version of the page.
  * This way we don't have to create two separate templates reducing repeated code.
  */
 function set_custom_templates() {
-	$catalog_in_greek_page_id = 599;
-
-	update_post_meta( $catalog_in_greek_page_id, '_wp_page_template', 'page-catalog.php' );
+	$catalog_english_page_id = 561;
+	update_post_meta( $catalog_english_page_id, '_wp_page_template', 'page-katalogos.php' );
 }
 add_action( 'set_custom_templates', set_custom_templates );
 
