@@ -49,13 +49,10 @@
     border-bottom: var(--block-border-style);
 }
 
-.filters-responsive.active::before {
-    transform: rotate(180deg);
-}
-
 .form-group-flex {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -65,6 +62,53 @@
     transition: all .3s;
 }
 
+.filters-container.active {
+    max-height: 600px;
+}
+
+.filters .filters-group {
+    width: 100%;
+}
+
+.filters .form-group {
+    margin-bottom: 0;
+}
+
+/*  */
+.filters .form-subgroup {
+    width: 100%;
+    border-bottom: var(--block-border-style);
+}
+
+.selected-option-label {
+    height: var(--block-height);
+    line-height: var(--block-line-height);
+    padding-left: var(--block-label-padding);
+    position: relative;
+    cursor: pointer;
+}
+
+/* Search field */
+.filters .search-input {
+    width: 100%;
+    border: 0;
+    height: var(--block-height);
+    padding-left: var(--block-label-padding);
+}
+
+.filters .search-input:focus-visible {
+    outline: none;
+}
+
+.hidden-input {
+    width: 0;
+    height: 0;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+/* Arrows on filter labels */
 .filters-responsive::before,
 .selected-option-label::before {
     --block-expand-arrow-size: 0.6rem;
@@ -77,7 +121,7 @@
     height: var(--block-expand-arrow-size);
     background-size: var(--block-expand-arrow-size);
     background-repeat: no-repeat;
-    
+
     top: calc(50% - .25rem);
     right: 0.5rem;
     z-index: 2;
@@ -86,6 +130,7 @@
     transform-origin: 50% 25%;
 }
 
+.filters-responsive.active::before,
 .selected-option-label.active::before {
     transform: rotate(180deg);
 }
@@ -98,6 +143,7 @@
     }
 
     .form-group-flex {
+        flex-direction: unset;
         flex-wrap: unset;
     }
 
@@ -105,14 +151,6 @@
         max-height: unset;
         overflow: unset;
         transition: unset;
-    }
-
-    .filters .filters-group {
-        width: 100%;
-    }
-
-    .filters .form-group {
-        margin-bottom: 0;
     }
 
     .form-subgroup {
@@ -126,23 +164,7 @@
     .filters .form-subgroup {
         border-top: var(--block-border-style);
         border-right: var(--block-border-style);
-        border-bottom: var(--block-border-style);
-
         width: 100%;
-    }
-
-    .selected-option-label {
-        height: var(--block-height);
-        line-height: var(--block-line-height);
-        padding-left: var(--block-label-padding);
-        position: relative;
-        cursor: pointer;
-    }
-
-    .filters .search-input {
-        height: var(--block-height);
-        border: 0;
-        padding-left: var(--block-label-padding);
     }
 
     .filters .form-group .form-subgroup:last-child {
@@ -151,13 +173,5 @@
 
     .filters .search-group .form-subgroup {
         border-left: var(--block-border-style);
-    }
-
-    .hidden-input {
-        width: 0;
-        height: 0;
-        position: absolute;
-        z-index: -1;
-        opacity: 0;
     }
 }
