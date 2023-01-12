@@ -28,7 +28,7 @@ get_header();
 
     <!-- Filters/Search Bar -->
     <div class="filters">
-        <div class="filters-responsive">Filters</div>
+        <div class="filters-responsive"><?php esc_html_e( 'Φίλτρα', 'brutus' ) ?></div>
         <div class="form-group-flex filters-container">
 
             <form class="form-group-flex form-group filters-group">
