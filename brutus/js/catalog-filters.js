@@ -21,12 +21,18 @@
     });
 
     const selectedOptionLabel = document.getElementsByClassName( 'selected-option-label' );
+    const selectedDropdown = document.getElementsByClassName( 'selected-dropdown' );
     for (let i = 0; i < selectedOptionLabel.length; i++) {
         selectedOptionLabel[i].addEventListener("click", function() {
-            if ( this.className.includes('active') ) {
-                this.classList.remove('active');
+            if ( selectedOptionLabel[i].className.includes('active') ) {
+                selectedOptionLabel[i].classList.remove('active');
             }
-            else { this.classList.add('active'); }
+            else { selectedOptionLabel[i].classList.add('active'); }
+
+            if ( selectedDropdown[i].className.includes('active') ) {
+                selectedDropdown[i].classList.remove('active');
+            }
+            else { selectedDropdown[i].classList.add('active'); }
         });
     }
 }() );
