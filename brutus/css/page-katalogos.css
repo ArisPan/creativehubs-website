@@ -1,5 +1,7 @@
 /* Catalog page styles
 	 ========================================================================== */
+
+/* Intro Text */
 .paragraph-container {
     margin: 1.5rem;
 }
@@ -16,4 +18,146 @@
 
     font-size: 1.25rem;
     font-weight: 300;
+}
+
+/* Filters bar */
+.filters * {
+    margin: 0;
+    padding: 0;
+}
+
+.filters {
+    --block-height: 3rem;
+    --block-line-height: 3rem;
+    --block-label-padding: 0.5rem;
+    --block-border-style: 2px solid #000;
+    
+    width: 100%;
+    z-index: 2;
+    position: relative;
+    background-color: white;
+}
+
+.filters-responsive {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    height: var(--block-height);
+    line-height: var(--block-line-height);
+    padding: 0 var(--block-label-padding);
+    border-top: var(--block-border-style);
+    border-bottom: var(--block-border-style);
+}
+
+.filters-responsive.active::before {
+    transform: rotate(180deg);
+}
+
+.form-group-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.filters-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: all .3s;
+}
+
+.filters-responsive::before,
+.selected-option-label::before {
+    --block-expand-arrow-size: 0.6rem;
+
+    background-image: url(https://creativehubs.gr/wp-content/uploads/2023/01/select-arrow.png);
+    content: "";
+
+    position: absolute;
+    width: var(--block-expand-arrow-size);
+    height: var(--block-expand-arrow-size);
+    background-size: var(--block-expand-arrow-size);
+    background-repeat: no-repeat;
+    
+    top: calc(50% - .25rem);
+    right: 0.5rem;
+    z-index: 2;
+
+    transition: all .3s;
+    transform-origin: 50% 25%;
+}
+
+.selected-option-label.active::before {
+    transform: rotate(180deg);
+}
+
+/* Desktop */
+@media only screen and (min-width: 768px) {
+    .filters-responsive {
+        display: none;
+        cursor: unset;
+    }
+
+    .form-group-flex {
+        flex-wrap: unset;
+    }
+
+    .filters-container {
+        max-height: unset;
+        overflow: unset;
+        transition: unset;
+    }
+
+    .filters .filters-group {
+        width: 100%;
+    }
+
+    .filters .form-group {
+        margin-bottom: 0;
+    }
+
+    .form-subgroup {
+        display: flex;
+        flex-direction: column;
+
+        position: relative;
+        z-index: 2;
+    }
+
+    .filters .form-subgroup {
+        border-top: var(--block-border-style);
+        border-right: var(--block-border-style);
+        border-bottom: var(--block-border-style);
+
+        width: 100%;
+    }
+
+    .selected-option-label {
+        height: var(--block-height);
+        line-height: var(--block-line-height);
+        padding-left: var(--block-label-padding);
+        position: relative;
+        cursor: pointer;
+    }
+
+    .filters .search-input {
+        height: var(--block-height);
+        border: 0;
+        padding-left: var(--block-label-padding);
+    }
+
+    .filters .form-group .form-subgroup:last-child {
+        border-right: 0;
+    }
+
+    .filters .search-group .form-subgroup {
+        border-left: var(--block-border-style);
+    }
+
+    .hidden-input {
+        width: 0;
+        height: 0;
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
 }
