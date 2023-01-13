@@ -137,6 +137,7 @@
     opacity: 0;
 }
 
+/* Individual filter options (eg blocks for "Origin", "Material" etc */
 .form-subgroup {
     display: flex;
     flex-direction: column;
@@ -159,6 +160,7 @@
     max-height: 300px;
     overflow: scroll;
     line-height: 2rem;
+    list-style: none;
 }
 
 /* Mobile only */
@@ -177,11 +179,13 @@
 
 /* Desktop */
 @media only screen and (min-width: 768px) {
+    /* Hide extra "Filters" block */
     .filters-responsive {
         display: none;
         cursor: unset;
     }
 
+    /* Change filters' bar orientation. From vertical in mobile to horizontal in desktop */
     .form-group-flex {
         flex-direction: unset;
         flex-wrap: unset;
@@ -193,18 +197,9 @@
         transition: unset;
     }
 
-    .form-subgroup {
-        display: flex;
-        flex-direction: column;
-
-        position: relative;
-        z-index: 2;
-    }
-
     .filters .form-subgroup {
         border-top: var(--block-border-style);
         border-right: var(--block-border-style);
-        width: 100%;
     }
 
     .filters .form-group .form-subgroup:last-child {
@@ -222,5 +217,9 @@
         border-left: var(--block-border-style);
         border-right: var(--block-border-style);
         border-bottom: var(--block-border-style);
+    }
+
+    .selected-dropdown.active li {
+        padding-left: var(--block-label-padding);
     }
 }
