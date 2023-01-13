@@ -35,46 +35,46 @@ get_header();
                 <div class="form-subgroup filters-subgroup">
                     <div name="origin", id="origin", class="selected-option-label"><?php esc_html_e( 'Προέλευση', 'brutus' ) ?></div>
                     <ul class="selected-dropdown">
-                        <li value="placeholder1">Placeholder 1</li>
-                        <li value="placeholder2">Placeholder 2</li>
-                        <li value="placeholder3">Placeholder 3</li>
-                        <li value="placeholder4">Placeholder 4</li>
-                        <li value="placeholder5">Placeholder 5</li>
-                        <li value="placeholder6">Placeholder 6</li>
-                        <li value="placeholder7">Placeholder 7</li>
-                        <li value="placeholder8">Placeholder 8</li>
-                        <li value="placeholder9">Placeholder 9</li>
-                        <li value="placeholder10">Placeholder 10</li>
+                        <li value="placeholder1"><?php esc_html_e( 'Placeholder 1', 'brutus' ) ?></li>
+                        <li value="placeholder2"><?php esc_html_e( 'Placeholder 2', 'brutus' ) ?></li>
+                        <li value="placeholder3"><?php esc_html_e( 'Placeholder 3', 'brutus' ) ?></li>
+                        <li value="placeholder4"><?php esc_html_e( 'Placeholder 4', 'brutus' ) ?></li>
+                        <li value="placeholder5"><?php esc_html_e( 'Placeholder 5', 'brutus' ) ?></li>
+                        <li value="placeholder6"><?php esc_html_e( 'Placeholder 6', 'brutus' ) ?></li>
+                        <li value="placeholder7"><?php esc_html_e( 'Placeholder 7', 'brutus' ) ?></li>
+                        <li value="placeholder8"><?php esc_html_e( 'Placeholder 8', 'brutus' ) ?></li>
+                        <li value="placeholder9"><?php esc_html_e( 'Placeholder 9', 'brutus' ) ?></li>
+                        <li value="placeholder10"><?php esc_html_e( 'Placeholder 10', 'brutus' ) ?></li>
                     </ul> <!-- .selected-dropdown -->
                 </div> <!-- .form-subgroup.subgroup -->
                 <div class="form-subgroup filters-subgroup">
                     <div name="period", id="period", class="selected-option-label"><?php esc_html_e( 'Περίοδος', 'brutus' ) ?></div>
                     <ul class="selected-dropdown">
-                        <li value="placeholder1">Placeholder 1</li>
-                        <li value="placeholder2">Placeholder 2</li>
-                        <li value="placeholder3">Placeholder 3</li>
-                        <li value="placeholder4">Placeholder 4</li>
-                        <li value="placeholder5">Placeholder 5</li>
-                        <li value="placeholder6">Placeholder 6</li>
-                        <li value="placeholder7">Placeholder 7</li>
-                        <li value="placeholder8">Placeholder 8</li>
-                        <li value="placeholder9">Placeholder 9</li>
-                        <li value="placeholder10">Placeholder 10</li>
+                        <li value="placeholder1"><?php esc_html_e( 'Placeholder 1', 'brutus' ) ?></li>
+                        <li value="placeholder2"><?php esc_html_e( 'Placeholder 2', 'brutus' ) ?></li>
+                        <li value="placeholder3"><?php esc_html_e( 'Placeholder 3', 'brutus' ) ?></li>
+                        <li value="placeholder4"><?php esc_html_e( 'Placeholder 4', 'brutus' ) ?></li>
+                        <li value="placeholder5"><?php esc_html_e( 'Placeholder 5', 'brutus' ) ?></li>
+                        <li value="placeholder6"><?php esc_html_e( 'Placeholder 6', 'brutus' ) ?></li>
+                        <li value="placeholder7"><?php esc_html_e( 'Placeholder 7', 'brutus' ) ?></li>
+                        <li value="placeholder8"><?php esc_html_e( 'Placeholder 8', 'brutus' ) ?></li>
+                        <li value="placeholder9"><?php esc_html_e( 'Placeholder 9', 'brutus' ) ?></li>
+                        <li value="placeholder10"><?php esc_html_e( 'Placeholder 10', 'brutus' ) ?></li>
                     </ul> <!-- .selected-dropdown -->
                 </div> <!-- .form-subgroup.subgroup -->
                 <div class="form-subgroup filters-subgroup">
                     <div name="material", id="material", class="selected-option-label"><?php esc_html_e( 'Υλικό', 'brutus' ) ?></div>
                     <ul class="selected-dropdown">
-                        <li value="placeholder1">Placeholder 1</li>
-                        <li value="placeholder2">Placeholder 2</li>
-                        <li value="placeholder3">Placeholder 3</li>
-                        <li value="placeholder4">Placeholder 4</li>
-                        <li value="placeholder5">Placeholder 5</li>
-                        <li value="placeholder6">Placeholder 6</li>
-                        <li value="placeholder7">Placeholder 7</li>
-                        <li value="placeholder8">Placeholder 8</li>
-                        <li value="placeholder9">Placeholder 9</li>
-                        <li value="placeholder10">Placeholder 10</li>
+                        <li value="placeholder1"><?php esc_html_e( 'Placeholder 1', 'brutus' ) ?></li>
+                        <li value="placeholder2"><?php esc_html_e( 'Placeholder 2', 'brutus' ) ?></li>
+                        <li value="placeholder3"><?php esc_html_e( 'Placeholder 3', 'brutus' ) ?></li>
+                        <li value="placeholder4"><?php esc_html_e( 'Placeholder 4', 'brutus' ) ?></li>
+                        <li value="placeholder5"><?php esc_html_e( 'Placeholder 5', 'brutus' ) ?></li>
+                        <li value="placeholder6"><?php esc_html_e( 'Placeholder 6', 'brutus' ) ?></li>
+                        <li value="placeholder7"><?php esc_html_e( 'Placeholder 7', 'brutus' ) ?></li>
+                        <li value="placeholder8"><?php esc_html_e( 'Placeholder 8', 'brutus' ) ?></li>
+                        <li value="placeholder9"><?php esc_html_e( 'Placeholder 9', 'brutus' ) ?></li>
+                        <li value="placeholder10"><?php esc_html_e( 'Placeholder 10', 'brutus' ) ?></li>
                     </ul> <!-- .selected-dropdown -->
                 </div> <!-- .form-subgroup.subgroup -->
                 <div class="form-subgroup search-subgroup">
