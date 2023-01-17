@@ -174,6 +174,68 @@ function set_custom_templates() {
 add_action( 'set_custom_templates', set_custom_templates );
 
 /**
+ * Create a custom post type for artefacts.
+ */
+function artefact_post_type() {
+
+	// Features this custom post type supports in Post Editor
+	$supports = array(
+		'title',			// Post title
+		'editor',			// Post editor
+		'author',			// Post author
+		'thumbnail',		// Featured image
+		'excerpt',			// Post excerpt 
+		'custom-fields',	// Custom fields
+		'revisions',		// Post revisions
+	);
+
+	// Set UI labels for Custom Post Type
+	$labels = array(
+		'name'				=> _x( 'Τεχνουργήματα', 'Post type general name', 'brutus' ),
+		'singular_name'		=> _x( 'Τεχνούργημα', 'Post type singular name', 'brutus' ),
+		'menu_name'			=> __( 'Τεχνουργήματα', 'brutus' ),
+		'name_admin_bar'	=> __( 'Τεχνουργήματα', 'brutus' ),
+		'add_new'			=> __( 'Προσθήκη Νέου', 'brutus' ),
+		'add_new_item'		=> __( 'Προσθήκη Νέου Τεχνουργήματος', 'brutus' ),
+		'edit_item'			=> __( 'Επεξεργασία Τεχνουργήματος', 'brutus' ),
+		'update_item'		=> __( 'Ενημέρωση Τεχνουργήματος', 'brutus' ),
+		'view_item'			=> __( 'Προβολή Τεχνουργήματος', 'brutus' ),
+		'all_items'			=> __( 'Όλα τα Τεχνουργήματα', 'brutus' ),
+		'search_items'		=> __( 'Αναζήτηση Τεχνουργημάτων', 'brutus' ),
+		'not_found'			=> __( 'Δεν βρέθηκαν τεχνουργήματα.', 'brutus' ),
+	);
+
+	$args = array(
+		'label'					=> __( 'Τεχνουργήματα', 'brutus' ),
+		'labels'				=> $labels,
+		'description'			=> __( 'Τεχνουργήματα της Περιφέρειας Ηπείρου', 'brutus' ),
+		'supports'				=> $supports,
+		'public'				=> true,
+		'show_ui'				=> true,
+		// 'show_in_menu'			=> true,
+		'show_in_nav_menus'		=> true,
+		'show_in_admin_bar'		=> true,
+		// 'menu_position'			=> 5,
+		'can_export'			=> true,
+		'has_archive'			=> true,
+		'publicly_queryable'	=> true,
+		'capability_type'		=> 'post',
+		'rewrite'				=> array( 'slug' => 'artefacts' ),
+		'show_in_rest'			=> true,
+		'exclude_from_search'	=> false,
+		/**
+		 * A hierarchical Custom Post Type is like Pages and can have Parent and child items.
+		 * A non-hierarchical CPT is like Posts.
+		 */
+		'hierarchical'			=> false,
+	);
+
+	// Register Custom Post Type
+    register_post_type( 'artefacts', $args );
+}
+add_action( 'init', 'artefact_post_type' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
