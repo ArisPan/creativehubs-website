@@ -236,6 +236,138 @@ function artefact_post_type() {
 add_action( 'init', 'artefact_post_type' );
 
 /**
+ * Create custom 'Origin' non-hierachical (behaves like a tag) taxonomy.
+ */
+function create_origin_nonhierarchical_taxonomy() {
+
+	// Set UI labels for custom taxonomy
+	$labels = array(
+		'name'							=> _x( 'Προελεύσεις', 'brutus' ),
+		'singular_name'					=> _x( 'Προέλευση', 'brutus' ),
+		'search_items'					=> __( 'Αναζήτηση στις Προελεύσεις', 'brutus' ),
+		'popular_items'					=> __( 'Δημοφιλείς Προελεύσεις', 'brutus' ),
+		'all_items'						=> __( 'Όλες οι Προελεύσεις', 'brutus' ),
+		'parent_item'					=> null,
+		'parent_item_colon'				=> null,
+		'edit_item'						=> __( 'Επεξεργασία Προέλευσης', 'brutus' ),
+		'update_item'					=> __( 'Ενημέρωση Προέλευσης', 'brutus' ),
+		'add_new_item'					=> __( 'Προσθήκη Προέλευσης', 'brutus' ),
+		'new_item_name'					=> __( 'Όνομα Νέας Προέλευσης', 'brutus' ),
+		'separate_items_with_commas'	=> __( 'Διαχωρισμός Προελεύσεων με Κόμμα', 'brutus' ),
+		'add_or_remove_items'			=> __( 'Προσθήκη ή Αφαίρεση Προέλευσης', 'brutus' ),	
+		'choose_from_most_used'			=> __( 'Επιλογή Μεταξύ των Δημοφιλέστερων Προελεύσεων', 'brutus' ),	
+		'menu_name'						=> __( 'Προέλευση', 'brutus' ),
+	);
+
+	// Options for custom taxonomy
+	$args = array(
+		'hierarchical'			=> false,
+		'labels'				=> $labels,
+		'show_ui'				=> true,
+		'show_in_rest'			=> true,
+		'show_admin_column'		=> true,
+		'update_count_callback'	=> '_update_post_term_count',
+		'query_var'				=> true,
+		'rewrite'				=> array( 'slug' => 'origin' ),
+	);
+
+	register_taxonomy(
+		'origin',		// Custom Taxonomy Name
+		'artefacts',	// Object types with which the taxonomy should be associated.
+		$args,			// Arguments for registering the taxonomy
+	);
+}
+add_action( 'init', 'create_origin_nonhierarchical_taxonomy' );
+
+/**
+ * Create custom 'Period' non-hierachical (behaves like a tag) taxonomy.
+ */
+function create_period_nonhierarchical_taxonomy() {
+
+	// Set UI labels for custom taxonomy
+	$labels = array(
+		'name'							=> _x( 'Περίοδοι', 'brutus' ),
+		'singular_name'					=> _x( 'Περίοδος', 'brutus' ),
+		'search_items'					=> __( 'Αναζήτηση στις Περιόδους', 'brutus' ),
+		'popular_items'					=> __( 'Δημοφιλείς Περίοδοι', 'brutus' ),
+		'all_items'						=> __( 'Όλες οι Περίοδοι', 'brutus' ),
+		'parent_item'					=> null,
+		'parent_item_colon'				=> null,
+		'edit_item'						=> __( 'Επεξεργασία Περιόδου', 'brutus' ),
+		'update_item'					=> __( 'Ενημέρωση Περιόδου', 'brutus' ),
+		'add_new_item'					=> __( 'Προσθήκη Περιόδου', 'brutus' ),
+		'new_item_name'					=> __( 'Όνομα Νέας Περιόδου', 'brutus' ),
+		'separate_items_with_commas'	=> __( 'Διαχωρισμός Περιόδων με Κόμμα', 'brutus' ),
+		'add_or_remove_items'			=> __( 'Προσθήκη ή Αφαίρεση Περιόδου', 'brutus' ),	
+		'choose_from_most_used'			=> __( 'Επιλογή Μεταξύ των Δημοφιλέστερων Περιόδων', 'brutus' ),	
+		'menu_name'						=> __( 'Περίοδος', 'brutus' ),
+	);
+
+	// Options for custom taxonomy
+	$args = array(
+		'hierarchical'			=> false,
+		'labels'				=> $labels,
+		'show_ui'				=> true,
+		'show_in_rest'			=> true,
+		'show_admin_column'		=> true,
+		'update_count_callback'	=> '_update_post_term_count',
+		'query_var'				=> true,
+		'rewrite'				=> array( 'slug' => 'period' ),
+	);
+
+	register_taxonomy(
+		'period',		// Custom Taxonomy Name
+		'artefacts',	// Object types with which the taxonomy should be associated.
+		$args,			// Arguments for registering the taxonomy
+	);
+}
+add_action( 'init', 'create_period_nonhierarchical_taxonomy' );
+
+/**
+ * Create custom 'Material' non-hierachical (behaves like a tag) taxonomy.
+ */
+function create_material_nonhierarchical_taxonomy() {
+
+	// Set UI labels for custom taxonomy
+	$labels = array(
+		'name'							=> _x( 'Υλικά', 'brutus' ),
+		'singular_name'					=> _x( 'Υλικό', 'brutus' ),
+		'search_items'					=> __( 'Αναζήτηση στα Υλικά', 'brutus' ),
+		'popular_items'					=> __( 'Δημοφιλή Υλικά', 'brutus' ),
+		'all_items'						=> __( 'Όλα τα Υλικά', 'brutus' ),
+		'parent_item'					=> null,
+		'parent_item_colon'				=> null,
+		'edit_item'						=> __( 'Επεξεργασία Υλικού', 'brutus' ),
+		'update_item'					=> __( 'Ενημέρωση Υλικού', 'brutus' ),
+		'add_new_item'					=> __( 'Προσθήκη Υλικού', 'brutus' ),
+		'new_item_name'					=> __( 'Όνομα Νέου Υλικού', 'brutus' ),
+		'separate_items_with_commas'	=> __( 'Διαχωρισμός Υλικών με Κόμμα', 'brutus' ),
+		'add_or_remove_items'			=> __( 'Προσθήκη ή Αφαίρεση Υλικού', 'brutus' ),	
+		'choose_from_most_used'			=> __( 'Επιλογή Μεταξύ των Δημοφιλέστερων Υλικών', 'brutus' ),	
+		'menu_name'						=> __( 'Υλικό', 'brutus' ),
+	);
+
+	// Options for custom taxonomy
+	$args = array(
+		'hierarchical'			=> false,
+		'labels'				=> $labels,
+		'show_ui'				=> true,
+		'show_in_rest'			=> true,
+		'show_admin_column'		=> true,
+		'update_count_callback'	=> '_update_post_term_count',
+		'query_var'				=> true,
+		'rewrite'				=> array( 'slug' => 'material' ),
+	);
+
+	register_taxonomy(
+		'material',		// Custom Taxonomy Name
+		'artefacts',	// Object types with which the taxonomy should be associated.
+		$args,			// Arguments for registering the taxonomy
+	);
+}
+add_action( 'init', 'create_material_nonhierarchical_taxonomy' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
