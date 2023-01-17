@@ -30,11 +30,11 @@ get_header();
     <div class="filters">
         <div class="filters-responsive"><?php esc_html_e( 'Φίλτρα', 'brutus' ) ?></div>
         <div class="form-group-flex filters-container">
-
             <form class="form-group-flex form-group filters-group">
                 <div class="form-subgroup filters-subgroup">
                     <div name="origin", id="origin", class="selected-option-label"><?php esc_html_e( 'Προέλευση', 'brutus' ) ?></div>
                     <ul class="selected-dropdown">
+                        <li value="origin-all"><?php esc_html_e( 'Όλες οι προελεύσεις', 'brutus' ) ?></li>
                         <li value="arta"><?php esc_html_e( 'Άρτα', 'brutus' ) ?></li>
                         <li value="dodoni"><?php esc_html_e( 'Δωδώνη', 'brutus' ) ?></li>
                         <li value="zagori"><?php esc_html_e( 'Ζαγόρι', 'brutus' ) ?></li>
@@ -46,9 +46,11 @@ get_header();
                         <li value="pogoni"><?php esc_html_e( 'Πωγώνι', 'brutus' ) ?></li>
                     </ul> <!-- .selected-dropdown -->
                 </div> <!-- .form-subgroup.subgroup -->
+
                 <div class="form-subgroup filters-subgroup">
                     <div name="period", id="period", class="selected-option-label"><?php esc_html_e( 'Περίοδος', 'brutus' ) ?></div>
                     <ul class="selected-dropdown">
+                        <li value="period-all"><?php esc_html_e( 'Όλες οι περίοδοι', 'brutus' ) ?></li>
                         <li value="1900AD"><?php esc_html_e( '20ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
                         <li value="1800AD"><?php esc_html_e( '19ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
                         <li value="1700AD"><?php esc_html_e( '18ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
@@ -67,9 +69,11 @@ get_header();
                         <li value="geometric"><?php esc_html_e( 'Γεωμετρική Περίοδος', 'brutus' ) ?></li>
                     </ul> <!-- .selected-dropdown -->
                 </div> <!-- .form-subgroup.subgroup -->
+
                 <div class="form-subgroup filters-subgroup">
                     <div name="material", id="material", class="selected-option-label"><?php esc_html_e( 'Υλικό', 'brutus' ) ?></div>
                     <ul class="selected-dropdown">
+                        <li value="material-all"><?php esc_html_e( 'Όλα τα υλικά', 'brutus' ) ?></li>
                         <li value="limestone"><?php esc_html_e( 'Ασβεστόλιθος', 'brutus' ) ?></li>
                         <li value="silver"><?php esc_html_e( 'Ασήμι', 'brutus' ) ?></li>
                         <li value="tempera"><?php esc_html_e( 'Αυγοτέμπερα', 'brutus' ) ?></li>
@@ -89,9 +93,12 @@ get_header();
                     <input class="hidden-input" type="submit", value="Search">
                 </div>
             </form> <!-- .form-group-flex.form-group.filters-group -->
-
         </div> <!-- .form-group-flex.filters-container -->
     </div> <!-- .filters -->
+
+    <div class="artifact-container">
+        
+    </div> <!-- .artifact-container -->
 </main> <!-- .site-main -->
 
 <?php
