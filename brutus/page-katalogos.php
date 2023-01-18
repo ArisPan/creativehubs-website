@@ -96,8 +96,24 @@ get_header();
         </div> <!-- .form-group-flex.filters-container -->
     </div> <!-- .filters -->
 
-    <div class="artifact-container">
-        
+    <div class="artefacts-container">
+        <?php
+            $args = array (
+                'post_type'     => 'artefacts',
+                'nopaging'      => true,
+            );
+            $loop = new WP_Query($args);
+            while ( $loop->have_posts() ) {
+                $loop->the_post();
+                ?>
+                <div class="post-thumbnail">
+                    <a href="<?php esc_url( the_permalink() ) ?>">
+                        <?php the_post_thumbnail( 'thumbnail' ); ?>
+                    </a>
+                </div>
+                <?php
+            }
+        ?>
     </div> <!-- .artifact-container -->
 </main> <!-- .site-main -->
 
