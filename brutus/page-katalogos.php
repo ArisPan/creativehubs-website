@@ -110,6 +110,7 @@ get_header();
                     <a href="<?php esc_url( the_permalink() ) ?>">
                         <?php the_post_thumbnail( 'thumbnail' ); ?>
                     </a>
+                    <div class="title-tag"><?php esc_html_e( the_title(), 'brutus' ) ?></div>
                 </div>
                 <?php
             }
