@@ -14,18 +14,27 @@ get_header();
     $description_custom_field_name = 'Περιγραφή';
     $material_custom_field_name = 'Υλικό';
 
+    $locale =  get_bloginfo('language');
+    if ($locale == 'en-US') {
+        $origin_custom_field_name = 'Origin';
+        $period_custom_field_name = 'Period';
+        $description_custom_field_name = 'Description';
+        $material_custom_field_name = 'Material';
+    }
+
     while ( have_posts() ) :
         the_post();
+        $title = the_title( '', '', false );
 ?>
 <main id="primary" class="site-main artefact-main">
-    <h1 id="title-mobile" class="title"><?php the_title(); ?></h1>
+    <h1 id="title-mobile" class="title"><?php esc_html_e( $title, 'brutus' ) ?></h1>
 
     <div class="img-container">
         <?php the_post_thumbnail( array( 500, 500 ) ); ?>
     </div> <!-- .img-container -->
 
     <div class="fields-container">
-        <h1 id="title-desktop" class="title"><?php the_title(); ?></h1>
+        <h1 id="title-desktop" class="title"><?php esc_html_e( $title, 'brutus' ) ?></h1>
 
         <div class="field-container origin">
             <h4 class="label"><?php esc_html_e( $origin_custom_field_name, 'brutus' ) ?></h4>
