@@ -237,3 +237,30 @@
     padding: 1rem;
     margin-top: 0.5rem;
 }
+
+.title-tag {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .post-thumbnail {
+        position: relative;
+    }
+
+    .title-tag {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 80%;
+        
+        background-color: black;
+        color: white;
+        font-weight: 300;
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .title-tag.hovered {
+        display: block;
+    }
+}
