@@ -191,24 +191,24 @@ function artefact_post_type() {
 
 	// Set UI labels for Custom Post Type
 	$labels = array(
-		'name'				=> _x( 'Τεχνουργήματα', 'Post type general name', 'brutus' ),
-		'singular_name'		=> _x( 'Τεχνούργημα', 'Post type singular name', 'brutus' ),
-		'menu_name'			=> __( 'Τεχνουργήματα', 'brutus' ),
-		'name_admin_bar'	=> __( 'Τεχνουργήματα', 'brutus' ),
-		'add_new'			=> __( 'Προσθήκη Νέου', 'brutus' ),
-		'add_new_item'		=> __( 'Προσθήκη Νέου Τεχνουργήματος', 'brutus' ),
-		'edit_item'			=> __( 'Επεξεργασία Τεχνουργήματος', 'brutus' ),
-		'update_item'		=> __( 'Ενημέρωση Τεχνουργήματος', 'brutus' ),
-		'view_item'			=> __( 'Προβολή Τεχνουργήματος', 'brutus' ),
-		'all_items'			=> __( 'Όλα τα Τεχνουργήματα', 'brutus' ),
-		'search_items'		=> __( 'Αναζήτηση Τεχνουργημάτων', 'brutus' ),
-		'not_found'			=> __( 'Δεν βρέθηκαν τεχνουργήματα.', 'brutus' ),
+		'name'				=> _x( 'Artefacts', 'Post type general name', 'brutus' ),
+		'singular_name'		=> _x( 'Artefact', 'Post type singular name', 'brutus' ),
+		'menu_name'			=> __( 'Artefacts', 'brutus' ),
+		'name_admin_bar'	=> __( 'Artefacts', 'brutus' ),
+		'add_new'			=> __( 'Add New', 'brutus' ),
+		'add_new_item'		=> __( 'Add New Artefact', 'brutus' ),
+		'edit_item'			=> __( 'Edit Artefact', 'brutus' ),
+		'update_item'		=> __( 'Update Artefact', 'brutus' ),
+		'view_item'			=> __( 'View Artefact', 'brutus' ),
+		'all_items'			=> __( 'All Artefacts', 'brutus' ),
+		'search_items'		=> __( 'Search Artefacts', 'brutus' ),
+		'not_found'			=> __( 'No artefacts found', 'brutus' ),
 	);
 
 	$args = array(
-		'label'					=> __( 'Τεχνουργήματα', 'brutus' ),
+		'label'					=> __( 'artefacts', 'brutus' ),
 		'labels'				=> $labels,
-		'description'			=> __( 'Τεχνουργήματα της Περιφέρειας Ηπείρου', 'brutus' ),
+		'description'			=> __( 'Artefacts of Region of Epirus', 'brutus' ),
 		'supports'				=> $supports,
 		'public'				=> true,
 		'show_ui'				=> true,
@@ -233,7 +233,7 @@ function artefact_post_type() {
 	// Register Custom Post Type
     register_post_type( 'artefacts', $args );
 }
-add_action( 'init', 'artefact_post_type' );
+add_action( 'init', 'artefact_post_type', 0 );
 
 /**
  * Create custom 'Origin' non-hierachical (behaves like a tag) taxonomy.
