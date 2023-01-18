@@ -1,14 +1,14 @@
 /* Catalog page styles
-	 ========================================================================== */
+    ========================================================================== */
 
-/* Intro Text */
+/* Intro Text
+    ===================================== */
 .paragraph-container {
     margin: 1.5rem;
 }
 
 .title {
     margin: 0;
-    font-size: 2rem;
     font-weight: 200;
 }
 
@@ -18,7 +18,8 @@
     font-weight: 300;
 }
 
-/* Filters bar */
+/* Filters bar
+    ===================================== */
 .filters * {
     margin: 0;
     padding: 0;
@@ -175,7 +176,8 @@
     }
 }
 
-/* Desktop */
+/* Desktop
+    ===================================== */
 @media only screen and (min-width: 768px) {
     /* Hide extra "Filters" block */
     .filters-responsive {
@@ -221,3 +223,7 @@
         padding-left: var(--block-label-padding);
     }
 }
+
+/* Artifacts
+    ===================================== */
+
