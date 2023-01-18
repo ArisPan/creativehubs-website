@@ -243,8 +243,8 @@ function create_origin_nonhierarchical_taxonomy() {
 
 	// Set UI labels for custom taxonomy
 	$labels = array(
-		'name'							=> _x( 'Προελεύσεις', 'brutus' ),
-		'singular_name'					=> _x( 'Προέλευση', 'brutus' ),
+		'name'							=> _x( 'Προελεύσεις', 'Taxonomy type general name', 'brutus' ),
+		'singular_name'					=> _x( 'Προέλευση', 'Taxonomy type singular name', 'brutus' ),
 		'search_items'					=> __( 'Αναζήτηση στις Προελεύσεις', 'brutus' ),
 		'popular_items'					=> __( 'Δημοφιλείς Προελεύσεις', 'brutus' ),
 		'all_items'						=> __( 'Όλες οι Προελεύσεις', 'brutus' ),
@@ -287,8 +287,8 @@ function create_period_nonhierarchical_taxonomy() {
 
 	// Set UI labels for custom taxonomy
 	$labels = array(
-		'name'							=> _x( 'Περίοδοι', 'brutus' ),
-		'singular_name'					=> _x( 'Περίοδος', 'brutus' ),
+		'name'							=> _x( 'Περίοδοι', 'Taxonomy type general name', 'brutus' ),
+		'singular_name'					=> _x( 'Περίοδος', 'Taxonomy type singular name', 'brutus' ),
 		'search_items'					=> __( 'Αναζήτηση στις Περιόδους', 'brutus' ),
 		'popular_items'					=> __( 'Δημοφιλείς Περίοδοι', 'brutus' ),
 		'all_items'						=> __( 'Όλες οι Περίοδοι', 'brutus' ),
@@ -331,8 +331,8 @@ function create_material_nonhierarchical_taxonomy() {
 
 	// Set UI labels for custom taxonomy
 	$labels = array(
-		'name'							=> _x( 'Υλικά', 'brutus' ),
-		'singular_name'					=> _x( 'Υλικό', 'brutus' ),
+		'name'							=> _x( 'Υλικά', 'Taxonomy type general name', 'brutus' ),
+		'singular_name'					=> _x( 'Υλικό', 'Taxonomy type singular name', 'brutus' ),
 		'search_items'					=> __( 'Αναζήτηση στα Υλικά', 'brutus' ),
 		'popular_items'					=> __( 'Δημοφιλή Υλικά', 'brutus' ),
 		'all_items'						=> __( 'Όλα τα Υλικά', 'brutus' ),
