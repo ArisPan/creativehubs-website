@@ -1,10 +1,13 @@
 /**
  * catalog-filters.js
  * 
+ * Scripts for filter's bar in page 'Catalog'.
+ */
+
+/**
  * On click, adds/removes the active class to all filter blocks.
  * The active class is responsible for rotating the expand arrow image on their right.
  */
-
 ( function() {
     const filtersResponsive = document.getElementsByClassName( 'filters-responsive' );
     const filtersContainer = document.getElementsByClassName( 'filters-container' );
@@ -35,4 +38,18 @@
             else { selectedDropdown[i].classList.add('active'); }
         });
     }
+}() );
+
+/**
+ * On scroll, fix filters bar on window's top.
+ */
+( function() {
+    const filters = document.getElementsByClassName( 'filters' );
+    const offsetPosition = filters[0].offsetTop;
+    window.onscroll = function() {
+        if ( window.pageYOffset > offsetPosition ) {
+            filters[0].classList.add( 'filters-fixed' );
+        }
+        else { filters[0].classList.remove( 'filters-fixed' ); }
+    };
 }() );
