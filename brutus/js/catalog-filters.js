@@ -66,6 +66,7 @@
                 // We make the (correct) assumption that in order to view and click the <li> elements,
                 // .delected-dropdown <ul> elements are expanded. Thus including the 'active' class.
                 selectedDropdown[i].classList.remove('active');
+                selectedOptionLabel[i].classList.remove('active');  // To rotate the arrow sign.
             });
         }
     }
