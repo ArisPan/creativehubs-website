@@ -1,3 +1,10 @@
+/**
+ * hover-artefact.js
+ * 
+ * On desktop, in page 'Catalog', reveal the artefact's title when hovered.
+ * 
+ */
+
 ( function() {
 
     const postThumbnail = document.getElementsByClassName( 'post-thumbnail' );
