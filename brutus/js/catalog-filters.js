@@ -9,6 +9,7 @@
  * The active class is responsible for rotating the expand arrow image on their right.
  */
 ( function() {
+    // Manages the extra 'Filters' block on mobile.
     const filtersResponsive = document.getElementsByClassName( 'filters-responsive' );
     const filtersContainer = document.getElementsByClassName( 'filters-container' );
     filtersResponsive[0].addEventListener("click", function() {
@@ -37,6 +38,36 @@
             }
             else { selectedDropdown[i].classList.add('active'); }
         });
+    }
+}() );
+
+/**
+ * When clicking a filter option (ie Arta from Origin dropdown),
+ * replace outer div's label with the chosen option and contract their respective <ul>.
+ */
+( function() {
+    // There are 3 .selected-option-label <div> elements.
+    // Each selected-option-label element has a .selected-dropdown <ul> element.
+    // Each .selected-dropdown element has a varying number of <li> elements.
+    const selectedOptionLabel = document.getElementsByClassName( 'selected-option-label' );
+    const selectedDropdown = document.getElementsByClassName( 'selected-dropdown' );
+
+    for (let i = 0; i < selectedDropdown.length; i++) {
+        // Get all <li> elements for each selected-dropdown <ul> element (ie every option for each dropdown).
+        var selectedDropdownItems = selectedDropdown[i].getElementsByTagName( 'li' );
+
+        for (let y = 0; y < selectedDropdownItems.length; y++) {
+            selectedDropdownItems[y].addEventListener("click", function() {
+                // Since every .selected-option-label <div> element
+                // is accompanied by a .selected-dropdown <ul> element,
+                // the same value of 'i' index will correspond to each set of them.
+                selectedOptionLabel[i].innerHTML = this.innerHTML;
+
+                // We make the (correct) assumption that in order to view and click the <li> elements,
+                // .delected-dropdown <ul> elements are expanded. Thus including the 'active' class.
+                selectedDropdown[i].classList.remove('active');
+            });
+        }
     }
 }() );
 
