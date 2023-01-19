@@ -30,7 +30,7 @@ get_header();
     <div class="filters">
         <div class="filters-responsive"><?php esc_html_e( 'Φίλτρα', 'brutus' ) ?></div>
         <div class="form-group-flex filters-container">
-            <form class="form-group-flex form-group filters-group">
+            <form class="form-group-flex form-group filters-group" action="/" method="GET">
                 <div class="form-subgroup filters-subgroup">
                     <div name="origin", id="origin", class="selected-option-label"><?php esc_html_e( 'Προέλευση', 'brutus' ) ?></div>
                     <ul class="selected-dropdown">
