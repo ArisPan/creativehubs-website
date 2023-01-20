@@ -53,7 +53,7 @@
     // Each .selected-dropdown element has a varying number of <li> elements.
     const selectedOptionLabel = document.getElementsByClassName( 'selected-option-label' );
     const selectedDropdown = document.getElementsByClassName( 'selected-dropdown' );
-    const filtersOptionHiddenInput = document.getElementById( 'filters-option' );
+    const filterInput = document.getElementsByClassName( 'filter-input' );
 
     for (let i = 0; i < selectedDropdown.length; i++) {
         // Get all <li> elements for each selected-dropdown <ul> element (ie every option for each dropdown).
@@ -66,8 +66,8 @@
                 // the same value of 'i' index will correspond to each set of them.
                 selectedOptionLabel[i].innerHTML = this.innerHTML;
  
-                // Update the #filters-option hidden input element's value attribute with <li>'s data-value.
-                filtersOptionHiddenInput.value = this.getAttribute('data-value');
+                // Update the .filter-input hidden input elements' value attributes with <li>'s data-value.
+                filterInput[i].value = this.getAttribute('data-value');
 
                 // We make the (correct) assumption that in order to view and click the <li> elements,
                 // .delected-dropdown <ul> elements are expanded. Thus including the 'active' class.
