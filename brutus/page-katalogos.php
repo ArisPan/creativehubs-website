@@ -30,7 +30,7 @@ get_header();
     <div class="filters">
         <div class="filters-responsive"><?php esc_html_e( 'Φίλτρα', 'brutus' ) ?></div>
         <div class="form-group-flex filters-container">
-            <form id="filters-form" class="form-group-flex form-group filters-group" action="<?php get_permalink( get_the_ID() ) ?>" method="GET">
+            <form id="filters-form" class="form-group-flex form-group filters-group" action="<?php get_permalink( get_the_ID() ) ?>" method="POST">
 
                 <div class="form-subgroup filters-subgroup">
                     <div name="origin" id="origin" class="selected-option-label"><?php esc_html_e( 'Προέλευση', 'brutus' ) ?></div>
@@ -99,122 +99,7 @@ get_header();
     </div> <!-- .filters -->
 
     <div class="artefacts-container">
-        <?php
-        /**
-         * For every Custom Taxonomy (origin, period, material), 
-         * we construct a tax_query based on the filter option the user has chosen. 
-         * ie artefacts made of copper and found in Dodoni in the 7th Century BC.
-         * 
-         * But what would happen if the user hasn't specified all taxonomies?
-         * For example, only origin is specified.
-         * We then have to include all periods and materials that appear in the specified taxonomy.
-         * 
-         * To achieve this, we pass a non existing operator to the tax_query argument
-         * that corresponds to the unspecified taxonomy/taxonomies.
-         * 
-         * This solution is proposed here: https://wordpress.stackexchange.com/a/291315
-         * For the complete documentation of tax_query, check here:
-         * https://developer.wordpress.org/reference/classes/wp_query/#taxonomy-parameters
-         * 
-         */
-            $origin = $_GET['origin'];
-            $period = $_GET['period'];
-            $material = $_GET['material'];
-
-            $origin_query = null;
-            $period_query = null;
-            $material_query = null;
-
-            $locale =  get_bloginfo('language');
-            // Origin Query
-            if ( isset( $origin ) AND !empty( $origin ) ) {
-                // When the chosen language is greek, 'origin' and 'material' taxonomy's terms have an '-el' suffix.
-                if ( $locale == 'el' ) { $origin .= '-el'; }
-
-                $origin_query = array (
-                    'taxonomy'  => 'origin',
-                    'field'     => 'slug',
-                    'terms'     => $origin
-                );
-            }
-            else {
-                $origin_query = array (
-                    'taxonomy'  => 'origin',
-                    'operator'  => 'XXX'
-                );
-            }
-
-            // Period Query
-            if ( isset( $period ) AND !empty( $period ) ) {
-                $period_query = array (
-                    'taxonomy'  => 'period',
-                    'field'     => 'slug',
-                    'terms'     => $period
-                );
-            }
-            else {
-                $period_query = array (
-                    'taxonomy'  => 'period',
-                    'operator'  => 'XXX'
-                );
-            }
-
-            // Material Query
-            if ( isset( $material ) AND !empty( $material ) ) {
-                // When the chosen language is greek, 'origin' and 'material' taxonomy's terms have an '-el' suffix.
-                if ( $locale == 'el' ) { $material .= '-el'; }
-
-                $material_query = array (
-                    'taxonomy'  => 'material',
-                    'field'     => 'slug',
-                    'terms'     => $material
-                );
-            }
-            else {
-                $material_query = array (
-                    'taxonomy'  => 'material',
-                    'operator'  => 'XXX'
-                );
-            }
-
-            $args = array (
-                'post_type'     => 'artefacts',
-                'nopaging'      => true,
-                'tax_query'     => array (
-                    'relation' => 'AND',
-                    $origin_query,
-                    $period_query,
-                    $material_query
-                )
-            );
-            $loop = new WP_Query($args);
-            while ( $loop->have_posts() ) {
-                $loop->the_post();
-                /**
-                 * For English:
-                 * pll_get_post_language( get_the_ID(), 'slug' ) returns 'en'
-                 * pll_get_post_language( get_the_ID(), 'locale' ) returns 'en_US'
-                 * get_bloginfo( 'language' ) returns 'en-US'
-                 * 
-                 * $locale gets its value from get_bloginfo('language');
-                 * So we keep the first 2 letters of it...
-                 * 
-                 * Oh. And all this is to keep english posts from appearing in the greek catalog
-                 * and vice versa.
-                 */
-                $post_language = pll_get_post_language( get_the_ID(), 'slug' );
-                if ( strcmp( $post_language, substr( $locale, 0, 2) ) !== 0 ) { continue; }
-                ?>
-                <div class="post-thumbnail">
-                    <a href="<?php esc_url( the_permalink() ) ?>">
-                        <?php the_post_thumbnail( 'thumbnail' ); ?>
-                    </a>
-                    <div class="title-tag"><?php esc_html_e( the_title(), 'brutus' ) ?></div>
-                </div>
-                <?php
-            }
-            wp_reset_postdata();
-        ?>
+        <?php get_template_part( 'template-parts/query-artefacts' ); ?>
     </div> <!-- .artefacts-container -->
 </main> <!-- .site-main -->
 
