@@ -20,9 +20,18 @@
     $period = $_POST['period'];
     $material = $_POST['material'];
 
-    $origin_query = null;
-    $period_query = null;
-    $material_query = null;
+    $origin_query = array (
+        'taxonomy'  => 'origin',
+        'operator'  => 'XXX'
+    );
+    $period_query = array (
+        'taxonomy'  => 'period',
+        'operator'  => 'XXX'
+    );
+    $material_query = array (
+        'taxonomy'  => 'material',
+        'operator'  => 'XXX'
+    );
 
     $locale =  get_bloginfo('language');
     // Origin Query
@@ -33,13 +42,8 @@
         $origin_query = array (
             'taxonomy'  => 'origin',
             'field'     => 'slug',
-            'terms'     => $origin
-        );
-    }
-    else {
-        $origin_query = array (
-            'taxonomy'  => 'origin',
-            'operator'  => 'XXX'
+            'terms'     => $origin,
+            'operator'  => 'IN'         // Restore default
         );
     }
 
@@ -48,13 +52,8 @@
         $period_query = array (
             'taxonomy'  => 'period',
             'field'     => 'slug',
-            'terms'     => $period
-        );
-    }
-    else {
-        $period_query = array (
-            'taxonomy'  => 'period',
-            'operator'  => 'XXX'
+            'terms'     => $period,
+            'operator'  => 'IN'
         );
     }
 
@@ -66,13 +65,8 @@
         $material_query = array (
             'taxonomy'  => 'material',
             'field'     => 'slug',
-            'terms'     => $material
-        );
-    }
-    else {
-        $material_query = array (
-            'taxonomy'  => 'material',
-            'operator'  => 'XXX'
+            'terms'     => $material,
+            'operator'  => 'IN'
         );
     }
 
@@ -103,8 +97,18 @@
          */
         $post_language = pll_get_post_language( get_the_ID(), 'slug' );
         if ( strcmp( $post_language, substr( $locale, 0, 2) ) !== 0 ) { continue; }
+            /**
+             * Get value of origin, period and material from every artefact.
+             * This value will then be used to fill the respective data-origin,
+             * data-period and data-material attributes of the artefact's container <div>.
+             * 
+             * We need the data-* attributes to hide the appropriate divs upon filter application.
+             */
+            $data_origin = get_the_terms( get_the_ID(), 'origin' )[0]->name;
+            $data_period = get_the_terms( get_the_ID(), 'period' )[0]->name;
+            $data_material = get_the_terms( get_the_ID(), 'material' )[0]->name;
         ?>
-        <div class="post-thumbnail">
+        <div class="post-thumbnail" data-origin="<?php echo $data_origin ?>" data-period="<?php echo $data_period ?>" data-material="<?php echo $data_material ?>">
             <a href="<?php esc_url( the_permalink() ) ?>">
                 <?php the_post_thumbnail( 'thumbnail' ); ?>
             </a>
