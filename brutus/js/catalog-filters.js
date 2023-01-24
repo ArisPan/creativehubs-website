@@ -84,26 +84,73 @@
 ( function() {
     window.addEventListener( "DOMContentLoaded", function() {
         var form = document.getElementById( 'filters-form' );
+
+        // const allArtefacts = document.getElementsByClassName( 'post-thumbnail' );
+        const results = new Object();
+        results['origin'] = new Set( document.getElementsByClassName( 'post-thumbnail' ) );
+        results['period'] = new Set( document.getElementsByClassName( 'post-thumbnail' ) );
+        results['material'] = new Set( document.getElementsByClassName( 'post-thumbnail' ) );
+
         var selectedOptionLabels = document.querySelectorAll( '.selected-dropdown li' );
+        for (let i = 0; i < selectedOptionLabels.length; i++) {
+
+            jQuery( selectedOptionLabels[i] ).on( 'click', function() {
+                var filterClass = this.getAttribute('class');
+                var dataValue = this.getAttribute('data-value');
+
+                jQuery( '.artefacts-container' ).find( '.post-thumbnail' )
+                .filter( function() {
+                    return jQuery(this).data( filterClass ).indexOf( dataValue ) > -1;
+                })
+
+                .fadeIn(200)
+
+                .end().filter( ':visible' )
+
+                .filter( function() {
+                    return jQuery(this).data( filterClass ).indexOf( dataValue ) === -1;
+                })
+
+                .fadeOut(0);
+            });
+        }
 
         for (let i = 0; i < selectedOptionLabels.length; i++) {
             selectedOptionLabels[i].addEventListener("click", function() {
-                form.submit();
+                // form.submit();
             });
         }
     });
+
+    function intersection(setA, setB) {
+        const _intersection = new Set();
+        for (const elem of setB) {
+          if (setA.has(elem)) {
+            _intersection.add(elem);
+          }
+        }
+        return _intersection;
+      }
+
+      function difference(setA, setB) {
+        const _difference = new Set(setA);
+        for (const elem of setB) {
+          _difference.delete(elem);
+        }
+        return _difference;
+      }
 }() );
 
 /**
  * On scroll, fix filters bar on window's top.
  */
-( function() {
-    const filters = document.getElementsByClassName( 'filters' );
-    const offsetPosition = filters[0].offsetTop;
-    window.onscroll = function() {
-        if ( window.pageYOffset > offsetPosition ) {
-            filters[0].classList.add( 'filters-fixed' );
-        }
-        else { filters[0].classList.remove( 'filters-fixed' ); }
-    };
-}() );
+// ( function() {
+//     const filters = document.getElementsByClassName( 'filters' );
+//     const offsetPosition = filters[0].offsetTop;
+//     window.onscroll = function() {
+//         if ( window.pageYOffset > offsetPosition ) {
+//             filters[0].classList.add( 'filters-fixed' );
+//         }
+//         else { filters[0].classList.remove( 'filters-fixed' ); }
+//     };
+// }() );
