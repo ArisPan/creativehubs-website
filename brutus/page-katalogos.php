@@ -30,22 +30,22 @@ get_header();
     <div class="filters">
         <div class="filters-responsive"><?php esc_html_e( 'Φίλτρα', 'brutus' ) ?></div>
         <div class="form-group-flex filters-container">
-            <form id="filters-form" class="form-group-flex form-group filters-group" action="<?php get_permalink( get_the_ID() ) ?>" method="POST">
+            <form id="filters-form" class="form-group-flex form-group filters-group" action="<?php get_permalink( get_the_ID() ) ?>" method="GET">
 
                 <div class="form-subgroup filters-subgroup">
                     <div name="origin" id="origin" class="selected-option-label"><?php esc_html_e( 'Προέλευση', 'brutus' ) ?></div>
                     <input type="hidden" class="filter-input" name="origin" value=""/>
                     <ul class="selected-dropdown">
-                        <li data-value="origin-all"><?php esc_html_e( 'Όλες οι προελεύσεις', 'brutus' ) ?></li>
-                        <li data-value="Arta"><?php esc_html_e( 'Άρτα', 'brutus' ) ?></li>
-                        <li data-value="Dodoni"><?php esc_html_e( 'Δωδώνη', 'brutus' ) ?></li>
-                        <li data-value="Zagori"><?php esc_html_e( 'Ζαγόρι', 'brutus' ) ?></li>
-                        <li data-value="Thesprotia"><?php esc_html_e( 'Θεσπρωτία', 'brutus' ) ?></li>
-                        <li data-value="Ioannina"><?php esc_html_e( 'Ιωάννινα', 'brutus' ) ?></li>
-                        <li data-value="Kastritsa"><?php esc_html_e( 'Καστρίτσα', 'brutus' ) ?></li>
-                        <li data-value="Metsovo"><?php esc_html_e( 'Μέτσοβο', 'brutus' ) ?></li>
-                        <li data-value="Nikopoli"><?php esc_html_e( 'Νικόπολη', 'brutus' ) ?></li>
-                        <li data-value="Pogoni"><?php esc_html_e( 'Πωγώνι', 'brutus' ) ?></li>
+                        <li class="origin" data-value="all"><?php esc_html_e( 'Όλες οι προελεύσεις', 'brutus' ) ?></li>
+                        <li class="origin" data-value="Arta"><?php esc_html_e( 'Άρτα', 'brutus' ) ?></li>
+                        <li class="origin" data-value="Dodoni"><?php esc_html_e( 'Δωδώνη', 'brutus' ) ?></li>
+                        <li class="origin" data-value="Zagori"><?php esc_html_e( 'Ζαγόρι', 'brutus' ) ?></li>
+                        <li class="origin" data-value="Thesprotia"><?php esc_html_e( 'Θεσπρωτία', 'brutus' ) ?></li>
+                        <li class="origin" data-value="Ioannina"><?php esc_html_e( 'Ιωάννινα', 'brutus' ) ?></li>
+                        <li class="origin" data-value="Kastritsa"><?php esc_html_e( 'Καστρίτσα', 'brutus' ) ?></li>
+                        <li class="origin" data-value="Metsovo"><?php esc_html_e( 'Μέτσοβο', 'brutus' ) ?></li>
+                        <li class="origin" data-value="Nikopoli"><?php esc_html_e( 'Νικόπολη', 'brutus' ) ?></li>
+                        <li class="origin" data-value="Pogoni"><?php esc_html_e( 'Πωγώνι', 'brutus' ) ?></li>
                     </ul> <!-- .selected-dropdown -->
                 </div> <!-- .form-subgroup.subgroup -->
 
@@ -53,21 +53,21 @@ get_header();
                     <div name="period" id="period" class="selected-option-label"><?php esc_html_e( 'Περίοδος', 'brutus' ) ?></div>
                     <input type="hidden" class="filter-input" name="period" value=""/>
                     <ul class="selected-dropdown">
-                        <li data-value="period-all"><?php esc_html_e( 'Όλες οι περίοδοι', 'brutus' ) ?></li>
-                        <li data-value="1900AD"><?php esc_html_e( '20ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
-                        <li data-value="1800AD"><?php esc_html_e( '19ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
-                        <li data-value="1700AD"><?php esc_html_e( '18ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
-                        <li data-value="1300AD"><?php esc_html_e( '13ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
-                        <li data-value="500AD"><?php esc_html_e( '6ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
-                        <li data-value="400AD"><?php esc_html_e( '5ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
-                        <li data-value="100AD"><?php esc_html_e( '2ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
-                        <li data-value="1AD"><?php esc_html_e( '1ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
-                        <li data-value="200BC"><?php esc_html_e( '3ος αιώνας π.Χ.', 'brutus' ) ?></li>
-                        <li data-value="300BC"><?php esc_html_e( '4ος αιώνας π.Χ.', 'brutus' ) ?></li>
-                        <li data-value="400BC"><?php esc_html_e( '5ος Αιώνας π.Χ.', 'brutus' ) ?></li>
-                        <li data-value="500BC"><?php esc_html_e( '6ος Αιώνας π.Χ.', 'brutus' ) ?></li>
-                        <li data-value="600BC"><?php esc_html_e( '7ος Αιώνας π.Χ.', 'brutus' ) ?></li>
-                        <li data-value="700BC"><?php esc_html_e( '8ος Αιώνας π.Χ.', 'brutus' ) ?></li>
+                        <li class="period" data-value="all"><?php esc_html_e( 'Όλες οι περίοδοι', 'brutus' ) ?></li>
+                        <li class="period" data-value="1900AD"><?php esc_html_e( '20ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
+                        <li class="period" data-value="1800AD"><?php esc_html_e( '19ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
+                        <li class="period" data-value="1700AD"><?php esc_html_e( '18ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
+                        <li class="period" data-value="1300AD"><?php esc_html_e( '13ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
+                        <li class="period" data-value="500AD"><?php esc_html_e( '6ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
+                        <li class="period" data-value="400AD"><?php esc_html_e( '5ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
+                        <li class="period" data-value="100AD"><?php esc_html_e( '2ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
+                        <li class="period" data-value="1AD"><?php esc_html_e( '1ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
+                        <li class="period" data-value="200BC"><?php esc_html_e( '3ος αιώνας π.Χ.', 'brutus' ) ?></li>
+                        <li class="period" data-value="300BC"><?php esc_html_e( '4ος αιώνας π.Χ.', 'brutus' ) ?></li>
+                        <li class="period" data-value="400BC"><?php esc_html_e( '5ος Αιώνας π.Χ.', 'brutus' ) ?></li>
+                        <li class="period" data-value="500BC"><?php esc_html_e( '6ος Αιώνας π.Χ.', 'brutus' ) ?></li>
+                        <li class="period" data-value="600BC"><?php esc_html_e( '7ος Αιώνας π.Χ.', 'brutus' ) ?></li>
+                        <li class="period" data-value="700BC"><?php esc_html_e( '8ος Αιώνας π.Χ.', 'brutus' ) ?></li>
                     </ul> <!-- .selected-dropdown -->
                 </div> <!-- .form-subgroup.subgroup -->
 
@@ -75,19 +75,19 @@ get_header();
                     <div name="material" id="material" class="selected-option-label"><?php esc_html_e( 'Υλικό', 'brutus' ) ?></div>
                     <input type="hidden" class="filter-input" name="material" value=""/>
                     <ul class="selected-dropdown">
-                        <li data-value="material-all"><?php esc_html_e( 'Όλα τα υλικά', 'brutus' ) ?></li>
-                        <li data-value="Limestone"><?php esc_html_e( 'Ασβεστόλιθος', 'brutus' ) ?></li>
-                        <li data-value="Silver"><?php esc_html_e( 'Ασήμι', 'brutus' ) ?></li>
-                        <li data-value="Tempera"><?php esc_html_e( 'Αυγοτέμπερα', 'brutus' ) ?></li>
-                        <li data-value="Glass"><?php esc_html_e( 'Γυαλί', 'brutus' ) ?></li>
-                        <li data-value="Volcanic"><?php esc_html_e( 'Ηφαιστειογενής Λίθος', 'brutus' ) ?></li>
-                        <li data-value="Wool"><?php esc_html_e( 'Μαλλί', 'brutus' ) ?></li>
-                        <li data-value="Marble"><?php esc_html_e( 'Μάρμαρο', 'brutus' ) ?></li>
-                        <li data-value="Wood"><?php esc_html_e( 'Ξύλο', 'brutus' ) ?></li>
-                        <li data-value="Clay"><?php esc_html_e( 'Πηλός', 'brutus' ) ?></li>
-                        <li data-value="Porolith"><?php esc_html_e( 'Πωρόλιθος', 'brutus' ) ?></li>
-                        <li data-value="Felt"><?php esc_html_e( 'Τσόχα', 'brutus' ) ?></li>
-                        <li data-value="Copper"><?php esc_html_e( 'Χαλκός', 'brutus' ) ?></li>
+                        <li class="material" data-value="all"><?php esc_html_e( 'Όλα τα υλικά', 'brutus' ) ?></li>
+                        <li class="material" data-value="Limestone"><?php esc_html_e( 'Ασβεστόλιθος', 'brutus' ) ?></li>
+                        <li class="material" data-value="Silver"><?php esc_html_e( 'Ασήμι', 'brutus' ) ?></li>
+                        <li class="material" data-value="Tempera"><?php esc_html_e( 'Αυγοτέμπερα', 'brutus' ) ?></li>
+                        <li class="material" data-value="Glass"><?php esc_html_e( 'Γυαλί', 'brutus' ) ?></li>
+                        <li class="material" data-value="Volcanic"><?php esc_html_e( 'Ηφαιστειογενής Λίθος', 'brutus' ) ?></li>
+                        <li class="material" data-value="Wool"><?php esc_html_e( 'Μαλλί', 'brutus' ) ?></li>
+                        <li class="material" data-value="Marble"><?php esc_html_e( 'Μάρμαρο', 'brutus' ) ?></li>
+                        <li class="material" data-value="Wood"><?php esc_html_e( 'Ξύλο', 'brutus' ) ?></li>
+                        <li class="material" data-value="Clay"><?php esc_html_e( 'Πηλός', 'brutus' ) ?></li>
+                        <li class="material" data-value="Porolith"><?php esc_html_e( 'Πωρόλιθος', 'brutus' ) ?></li>
+                        <li class="material" data-value="Felt"><?php esc_html_e( 'Τσόχα', 'brutus' ) ?></li>
+                        <li class="material" data-value="Copper"><?php esc_html_e( 'Χαλκός', 'brutus' ) ?></li>
                     </ul> <!-- .selected-dropdown -->
                 </div> <!-- .form-subgroup.subgroup -->
                 <div class="form-subgroup search-subgroup">
