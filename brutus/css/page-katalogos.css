@@ -38,15 +38,15 @@
 }
 
 /* On scroll, fix filter's bar on page's top */
-.filters-fixed {
+/* .filters-fixed {
     position: fixed;
     top: 0;
-}
+} */
 
 /* Add some top margin to the artefacts-container to prevent sudden quick movement. */
-.filters-fixed + .artefacts-container {
+/* .filters-fixed + .artefacts-container {
     margin-top: 1rem;
-}
+} */
 
 /* Extra "Filters" block for mobile */
 .filters-responsive {
