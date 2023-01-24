@@ -16,9 +16,9 @@
  * https://developer.wordpress.org/reference/classes/wp_query/#taxonomy-parameters
  * 
  */
-    $origin = $_POST['origin'];
-    $period = $_POST['period'];
-    $material = $_POST['material'];
+    $origin = $_GET['origin'];
+    $period = $_GET['period'];
+    $material = $_GET['material'];
 
     $origin_query = array (
         'taxonomy'  => 'origin',
