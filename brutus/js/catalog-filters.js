@@ -187,3 +187,26 @@
         return _difference;
       }
 }() );
+
+/**
+ * When the user starts typing in the search bar,
+ * slide search submit button inside the canvas.
+ * 
+ * We can set a timeout for the submit button.
+ * We hide it again 5 seconds after the user has stopped typing.
+ */
+( function() {
+    const hiddenSearchSubmitButton = document.getElementsByClassName( 'hidden-input' );
+    const searchInput = document.getElementsByClassName( 'search-input' );
+    var timeout = null;
+    searchInput[0].addEventListener( "keydown", function() {
+        hiddenSearchSubmitButton[0].classList.add( 'active' );
+        searchInput[0].classList.add( 'active' );
+
+        // clearTimeout(timeout);
+        // timeout = setTimeout( function() {
+        //     hiddenSearchSubmitButton[0].classList.remove( 'active' );
+        //     searchInput[0].classList.remove( 'active' );
+        // }, 5000);
+    });
+}() );
