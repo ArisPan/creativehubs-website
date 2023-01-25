@@ -83,13 +83,11 @@
  */
 ( function() {
     window.addEventListener( "DOMContentLoaded", function() {
-        var form = document.getElementById( 'filters-form' );
 
-        // const allArtefacts = document.getElementsByClassName( 'post-thumbnail' );
         const results = new Object();
-        results['origin'] = new Set( document.getElementsByClassName( 'post-thumbnail' ) );
-        results['period'] = new Set( document.getElementsByClassName( 'post-thumbnail' ) );
-        results['material'] = new Set( document.getElementsByClassName( 'post-thumbnail' ) );
+        results['origin'] = new Set( jQuery( '.artefacts-container' ).find( '.post-thumbnail' ) );
+        results['period'] = new Set( jQuery( '.artefacts-container' ).find( '.post-thumbnail' ) );
+        results['material'] = new Set( jQuery( '.artefacts-container' ).find( '.post-thumbnail' ) );
 
         var selectedOptionLabels = document.querySelectorAll( '.selected-dropdown li' );
         for (let i = 0; i < selectedOptionLabels.length; i++) {
@@ -98,36 +96,55 @@
                 var filterClass = this.getAttribute('class');
                 var dataValue = this.getAttribute('data-value');
 
-                jQuery( '.artefacts-container' ).find( '.post-thumbnail' )
-                .filter( function() {
-                    return jQuery(this).data( filterClass ).indexOf( dataValue ) > -1;
-                })
+                results[filterClass] = new Set ( jQuery( '.artefacts-container' ).find( '.post-thumbnail' )
+                    .filter ( function() {
+                        return jQuery(this).data( filterClass ).indexOf( dataValue ) > -1;
+                    })
+                );
 
-                .fadeIn(200)
+                if ( dataValue == 'all' ) {
+                    results[filterClass] = new Set( jQuery( '.artefacts-container' ).find( '.post-thumbnail' ) );
+                }
 
-                .end().filter( ':visible' )
+                var includeSet = intersection( results['origin'], results['period'], results['material'] );
+                var excludeSet = difference(new Set( jQuery( '.artefacts-container' ).find( '.post-thumbnail' ) ), includeSet);
 
-                .filter( function() {
-                    return jQuery(this).data( filterClass ).indexOf( dataValue ) === -1;
-                })
+                var include = jQuery( Array.from( includeSet ) );
+                var exclude = jQuery( Array.from( excludeSet) );
 
-                .fadeOut(0);
+                for (const artefact of include) {
+                    jQuery(artefact).fadeIn(200);
+                }
+
+                var visible = jQuery( '.artefacts-container' ).find( '.post-thumbnail' ).filter( ':visible' );
+                for (const artefact of exclude) {
+                    visible.filter( artefact )
+                    .fadeOut(0);
+                }
             });
         }
 
-        for (let i = 0; i < selectedOptionLabels.length; i++) {
-            selectedOptionLabels[i].addEventListener("click", function() {
-                // form.submit();
-            });
-        }
+        // var form = document.getElementById( 'filters-form' );
+        // for (let i = 0; i < selectedOptionLabels.length; i++) {
+        //     selectedOptionLabels[i].addEventListener("click", function() {
+        //         form.submit();
+        //     });
+        // }
     });
 
-    function intersection(setA, setB) {
+    function intersection(setA, setB, setC) {
         const _intersection = new Set();
+        const intermediate_intersection = new Set();
         for (const elem of setB) {
-          if (setA.has(elem)) {
-            _intersection.add(elem);
-          }
+            if (setA.has(elem)) {
+            intermediate_intersection.add(elem);
+            }
+        }
+
+        for (const elem of setC) {
+            if (intermediate_intersection.has(elem)) {
+                _intersection.add(elem);
+            }
         }
         return _intersection;
       }
@@ -140,17 +157,3 @@
         return _difference;
       }
 }() );
-
-/**
- * On scroll, fix filters bar on window's top.
- */
-// ( function() {
-//     const filters = document.getElementsByClassName( 'filters' );
-//     const offsetPosition = filters[0].offsetTop;
-//     window.onscroll = function() {
-//         if ( window.pageYOffset > offsetPosition ) {
-//             filters[0].classList.add( 'filters-fixed' );
-//         }
-//         else { filters[0].classList.remove( 'filters-fixed' ); }
-//     };
-// }() );
