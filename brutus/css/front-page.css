@@ -30,15 +30,9 @@
 }
 
 .button-container {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    /* padding: 0 0.5rem; */
     text-align: center;
-}
-
-/* For really small screens, place the second button under the first */
-@media only screen and (max-width: 380px) {
-    .button-container>:nth-child(2) {
-        margin: 1rem auto 0 auto;
-    }
 }
 
 .button-container a {
@@ -47,6 +41,17 @@
 
     border: 0.125rem solid black;
     text-decoration: none;
+}
+
+.front-page-button {
+    display: inline-block;
+}
+
+/* For really small screens, place the second button under the first */
+@media only screen and (max-width: 356px) {
+    .front-page-button:first-child a {
+        margin-bottom: 1rem;
+    }
 }
 
 /* Desktop */
