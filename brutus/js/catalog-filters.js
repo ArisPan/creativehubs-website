@@ -79,12 +79,33 @@
 }() );
 
 /**
- * Submit .form-group-flex.form-group.filters-group form upon click on <li>.
+ * Every <li> contains a data and class attribute. class holds the filter's category and data the specific filter option. 
+ * So for example when <li>'s filter option is 'Arta', we know that the origin filter is included in the search results.
+ * 
+ * <div class="post-thumbnail"> (i.e. every artefact thumbnail container) 
+ * holds origin, period and material values for their respective artefact.
+ * 
+ * We will be matching <li>'s value (filter option) with the values of the <div>s.'
+ * We will be hiding the <div>s that their data attribute doesn't match the filter option.
  */
 ( function() {
     window.addEventListener( "DOMContentLoaded", function() {
 
+        /**
+         * results is a hash table which is a key / value data structure.
+         * 
+         * We have three filter categories and for each one we will be storing all the <div>s that match the filter option.
+         * So results['origin'] holds all the <div>s whose data attribute match <li>'s data attribute..
+         * In order to apply more than one filter, we will be performing an AND operation
+         * between the different sets of <div>s. The <div>s that are included in all three sets will be visible.
+         * All else will be hidden.
+         * 
+         * key: filter category
+         * value: Set of jQuery objects containing DOM Elements.
+         * * Set is the collection of choice to facilitate the AND operation via interesection.
+         */
         const results = new Object();
+        // To start with, all categories contain all <div> elements.
         results['origin'] = new Set( jQuery( '.artefacts-container' ).find( '.post-thumbnail' ) );
         results['period'] = new Set( jQuery( '.artefacts-container' ).find( '.post-thumbnail' ) );
         results['material'] = new Set( jQuery( '.artefacts-container' ).find( '.post-thumbnail' ) );
@@ -93,29 +114,38 @@
         for (let i = 0; i < selectedOptionLabels.length; i++) {
 
             jQuery( selectedOptionLabels[i] ).on( 'click', function() {
+                // filterClass is either origin, period or material
                 var filterClass = this.getAttribute('class');
+                // dataValue holds the specific option e.g. Dodoni, 700BC or Copper
                 var dataValue = this.getAttribute('data-value');
 
+                // Get all the <div>s whose data attribute match the <li> data attribute 
                 results[filterClass] = new Set ( jQuery( '.artefacts-container' ).find( '.post-thumbnail' )
                     .filter ( function() {
                         return jQuery(this).data( filterClass ).indexOf( dataValue ) > -1;
                     })
                 );
 
+                // In case of 'Show all' get all the <div>s
                 if ( dataValue == 'all' ) {
                     results[filterClass] = new Set( jQuery( '.artefacts-container' ).find( '.post-thumbnail' ) );
                 }
 
+                // AND operation between different filter options. It is performed in sets of two.
                 var includeSet = intersection( results['origin'], results['period'], results['material'] );
+                // We subtract the matching <div>s from the whole. What we are left with, we hide.
                 var excludeSet = difference(new Set( jQuery( '.artefacts-container' ).find( '.post-thumbnail' ) ), includeSet);
 
+                // Set to Array to match jQuery object structure
                 var include = jQuery( Array.from( includeSet ) );
                 var exclude = jQuery( Array.from( excludeSet) );
 
+                // Fade-in every matching <div>
                 for (const artefact of include) {
                     jQuery(artefact).fadeIn(200);
                 }
 
+                // Hide all visible <div>s that are included in the excluded set.
                 var visible = jQuery( '.artefacts-container' ).find( '.post-thumbnail' ).filter( ':visible' );
                 for (const artefact of exclude) {
                     visible.filter( artefact )
