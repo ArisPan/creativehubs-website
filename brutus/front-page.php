@@ -60,12 +60,16 @@
                     $about_href = 'https://creativehubs.gr/en/about/';
                 }
             ?>
-            <a title="<?php esc_html_e( 'Κατάλογος', 'brutus' ) ?>" href="<?php echo esc_url( $catalog_href ) ?>">
-                <?php esc_html_e( 'Δες τον κατάλογο', 'brutus' ) ?>
-            </a>
-            <a title="<?php esc_html_e( 'Σχετικά', 'brutus' ) ?>" href="<?php echo esc_url( $about_href ) ?>">
-                <?php esc_html_e( 'Μάθε περισσότερα', 'brutus' ) ?>
-            </a>
+            <div class="front-page-button">
+                <a title="<?php esc_html_e( 'Κατάλογος', 'brutus' ) ?>" href="<?php echo esc_url( $catalog_href ) ?>">
+                    <?php esc_html_e( 'Δες τον κατάλογο', 'brutus' ) ?>
+                </a>
+            </div>
+            <div class="front-page-button">
+                <a title="<?php esc_html_e( 'Σχετικά', 'brutus' ) ?>" href="<?php echo esc_url( $about_href ) ?>">
+                    <?php esc_html_e( 'Μάθε περισσότερα', 'brutus' ) ?>
+                </a>
+            </div
         </div>
     </header>
     <?php
