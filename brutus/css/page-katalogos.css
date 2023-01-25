@@ -163,6 +163,11 @@
     cursor: pointer;
 }
 
+.selected-dropdown.active li {
+    padding-left: var(--block-label-padding);
+    padding-top: var(--block-label-padding);
+}
+
 /* Mobile only */
 @media only screen and (max-width: 768px) {
     .filters .filters-group .filters-subgroup,
@@ -218,10 +223,6 @@
         border-left: var(--block-border-style);
         border-right: var(--block-border-style);
         border-bottom: var(--block-border-style);
-    }
-
-    .selected-dropdown.active li {
-        padding-left: var(--block-label-padding);
     }
 }
 
