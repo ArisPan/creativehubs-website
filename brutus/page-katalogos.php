@@ -31,11 +31,10 @@ get_header();
     <div class="filters">
         <div class="filters-responsive"><?php esc_html_e( 'Φίλτρα', 'brutus' ) ?></div>
         <div class="form-group-flex filters-container">
-            <form id="filters-form" class="form-group-flex form-group filters-group" action="<?php get_permalink( get_the_ID() ) ?>" method="GET">
+            <form id="filters-form" class="form-group-flex form-group filters-group" method="GET" action="<?php get_permalink( get_the_ID() ) ?>">
 
                 <div class="form-subgroup filters-subgroup">
                     <div name="origin" id="origin" class="selected-option-label"><?php esc_html_e( 'Προέλευση', 'brutus' ) ?></div>
-                    <input type="hidden" class="filter-input" name="origin" value=""/>
                     <ul class="selected-dropdown">
                         <li class="origin" data-value="all"><?php esc_html_e( 'Όλες οι προελεύσεις', 'brutus' ) ?></li>
                         <li class="origin" data-value="Arta"><?php esc_html_e( 'Άρτα', 'brutus' ) ?></li>
@@ -52,7 +51,6 @@ get_header();
 
                 <div class="form-subgroup filters-subgroup">
                     <div name="period" id="period" class="selected-option-label"><?php esc_html_e( 'Περίοδος', 'brutus' ) ?></div>
-                    <input type="hidden" class="filter-input" name="period" value=""/>
                     <ul class="selected-dropdown">
                         <li class="period" data-value="all"><?php esc_html_e( 'Όλες οι περίοδοι', 'brutus' ) ?></li>
                         <li class="period" data-value="1900AD"><?php esc_html_e( '20ος Αιώνας μ.Χ.', 'brutus' ) ?></li>
@@ -75,7 +73,6 @@ get_header();
 
                 <div class="form-subgroup filters-subgroup">
                     <div name="material" id="material" class="selected-option-label"><?php esc_html_e( 'Υλικό', 'brutus' ) ?></div>
-                    <input type="hidden" class="filter-input" name="material" value=""/>
                     <ul class="selected-dropdown">
                         <li class="material" data-value="all"><?php esc_html_e( 'Όλα τα υλικά', 'brutus' ) ?></li>
                         <li class="material" data-value="Limestone"><?php esc_html_e( 'Ασβεστόλιθος', 'brutus' ) ?></li>
@@ -93,8 +90,8 @@ get_header();
                     </ul> <!-- .selected-dropdown -->
                 </div> <!-- .form-subgroup.subgroup -->
                 <div class="form-subgroup search-subgroup">
-                    <input class="search-input" type="text" placeholder="<?php esc_html_e( 'Αναζήτηση', 'brutus' ) ?>">
-                    <input class="hidden-input" type="submit" value="Search">
+                    <input class="search-input" type="text" name="q" placeholder="<?php esc_html_e( 'Αναζήτηση', 'brutus' ) ?>">
+                    <input class="hidden-input" type="submit" value="<?php esc_html_e( 'Ψάξε', 'brutus' ) ?>">
                 </div>
             </form> <!-- .form-group-flex.form-group.filters-group -->
         </div> <!-- .form-group-flex.filters-container -->
