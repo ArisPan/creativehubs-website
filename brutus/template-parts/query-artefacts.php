@@ -1,86 +1,24 @@
 <?php
-/**
- * For every Custom Taxonomy (origin, period, material), 
- * we construct a tax_query based on the filter option the user has chosen. 
- * ie artefacts made of copper and found in Dodoni in the 7th Century BC.
- * 
- * But what would happen if the user hasn't specified all taxonomies?
- * For example, only origin is specified.
- * We then have to include all periods and materials that appear in the specified taxonomy.
- * 
- * To achieve this, we pass a non existing operator to the tax_query argument
- * that corresponds to the unspecified taxonomy/taxonomies.
- * 
- * This solution is proposed here: https://wordpress.stackexchange.com/a/291315
- * For the complete documentation of tax_query, check here:
- * https://developer.wordpress.org/reference/classes/wp_query/#taxonomy-parameters
- * 
- */
-    $origin = $_GET['origin'];
-    $period = $_GET['period'];
-    $material = $_GET['material'];
-
-    $origin_query = array (
-        'taxonomy'  => 'origin',
-        'operator'  => 'XXX'
-    );
-    $period_query = array (
-        'taxonomy'  => 'period',
-        'operator'  => 'XXX'
-    );
-    $material_query = array (
-        'taxonomy'  => 'material',
-        'operator'  => 'XXX'
-    );
-
-    $locale =  get_bloginfo('language');
-    // Origin Query
-    if ( isset( $origin ) AND !empty( $origin ) ) {
-        // When the chosen language is greek, 'origin' and 'material' taxonomy's terms have an '-el' suffix.
-        if ( $locale == 'el' ) { $origin .= '-el'; }
-
-        $origin_query = array (
-            'taxonomy'  => 'origin',
-            'field'     => 'slug',
-            'terms'     => $origin,
-            'operator'  => 'IN'         // Restore default
-        );
-    }
-
-    // Period Query
-    if ( isset( $period ) AND !empty( $period ) ) {
-        $period_query = array (
-            'taxonomy'  => 'period',
-            'field'     => 'slug',
-            'terms'     => $period,
-            'operator'  => 'IN'
-        );
-    }
-
-    // Material Query
-    if ( isset( $material ) AND !empty( $material ) ) {
-        // When the chosen language is greek, 'origin' and 'material' taxonomy's terms have an '-el' suffix.
-        if ( $locale == 'el' ) { $material .= '-el'; }
-
-        $material_query = array (
-            'taxonomy'  => 'material',
-            'field'     => 'slug',
-            'terms'     => $material,
-            'operator'  => 'IN'
-        );
-    }
-
+    /**
+     * If search is performed, change the WP_Query parameter to the search query.
+     * 
+     * For more information about The Loop and searching, check:
+     * https://developer.wordpress.org/reference/classes/wp_query/
+     * https://stackoverflow.com/a/9962112/13272522
+     * 
+     */
     $args = array (
         'post_type'     => 'artefacts',
         'nopaging'      => true,
-        'tax_query'     => array (
-            'relation' => 'AND',
-            $origin_query,
-            $period_query,
-            $material_query
-        )
     );
+
+    $search_query = $_GET['q'];
+    if ( isset( $search_query ) AND !empty( $search_query ) ) {
+        $args = array( 's' => $search_query );
+    }
+
     $loop = new WP_Query($args);
+    $locale =  get_bloginfo('language');
     while ( $loop->have_posts() ) {
         $loop->the_post();
         /**
@@ -98,7 +36,7 @@
         $post_language = pll_get_post_language( get_the_ID(), 'slug' );
         if ( strcmp( $post_language, substr( $locale, 0, 2) ) !== 0 ) { continue; }
             /**
-             * Get value of origin, period and material from every artefact.
+             * Get value of origin, period and material for every artefact.
              * This value will then be used to fill the respective data-origin,
              * data-period and data-material attributes of the artefact's container <div>.
              * 
