@@ -43,9 +43,7 @@
 
 /**
  * When clicking a filter option (ie Arta from Origin dropdown),
- * replace outer div's label with the chosen option,
- * update the #filters-option hidden input element's value attribute with <li>'s value
- * and contract their respective <ul>.
+ * replace outer div's label with the chosen option and contract their respective <ul>.
  */
 ( function() {
     // There are 3 .selected-option-label <div> elements.
@@ -53,7 +51,6 @@
     // Each .selected-dropdown element has a varying number of <li> elements.
     const selectedOptionLabel = document.getElementsByClassName( 'selected-option-label' );
     const selectedDropdown = document.getElementsByClassName( 'selected-dropdown' );
-    const filterInput = document.getElementsByClassName( 'filter-input' );
 
     for (let i = 0; i < selectedDropdown.length; i++) {
         // Get all <li> elements for each selected-dropdown <ul> element (ie every option for each dropdown).
@@ -66,9 +63,6 @@
                 // the same value of 'i' index will correspond to each set of them.
                 selectedOptionLabel[i].innerHTML = this.innerHTML;
  
-                // Update the .filter-input hidden input elements' value attributes with <li>'s data-value.
-                filterInput[i].value = this.getAttribute('data-value');
-
                 // We make the (correct) assumption that in order to view and click the <li> elements,
                 // .delected-dropdown <ul> elements are expanded. Thus including the 'active' class.
                 selectedDropdown[i].classList.remove('active');
@@ -153,13 +147,6 @@
                 }
             });
         }
-
-        // var form = document.getElementById( 'filters-form' );
-        // for (let i = 0; i < selectedOptionLabels.length; i++) {
-        //     selectedOptionLabels[i].addEventListener("click", function() {
-        //         form.submit();
-        //     });
-        // }
     });
 
     function intersection(setA, setB, setC) {
@@ -198,15 +185,9 @@
 ( function() {
     const hiddenSearchSubmitButton = document.getElementsByClassName( 'hidden-input' );
     const searchInput = document.getElementsByClassName( 'search-input' );
-    var timeout = null;
+
     searchInput[0].addEventListener( "keydown", function() {
         hiddenSearchSubmitButton[0].classList.add( 'active' );
         searchInput[0].classList.add( 'active' );
-
-        // clearTimeout(timeout);
-        // timeout = setTimeout( function() {
-        //     hiddenSearchSubmitButton[0].classList.remove( 'active' );
-        //     searchInput[0].classList.remove( 'active' );
-        // }, 5000);
     });
 }() );
