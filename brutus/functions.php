@@ -172,7 +172,9 @@ add_action( 'wp_enqueue_scripts', add_custom_styles );
  */
 function set_custom_templates() {
 	$catalog_english_page_id = 561;
+	$about_english_page_id = 573;
 	update_post_meta( $catalog_english_page_id, '_wp_page_template', 'page-katalogos.php' );
+	update_post_meta( $about_english_page_id, '_wp_page_template', 'page-sxetika.php' );
 }
 add_action( 'set_custom_templates', set_custom_templates );
 
