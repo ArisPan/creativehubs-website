@@ -976,6 +976,11 @@ textarea {
 	outline: 0;
 }
 
+/* Custom styles for One Click Accessibility plugin */
+#pojo-a11y-toolbar .pojo-a11y-toolbar-overlay ul.pojo-a11y-toolbar-items li.pojo-a11y-toolbar-item a .pojo-a11y-toolbar-text {
+	vertical-align: unset !important;
+}
+
 /* Alignments
 --------------------------------------------- */
 .alignleft {
