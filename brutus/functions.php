@@ -159,6 +159,7 @@ function add_custom_styles() {
 	wp_enqueue_style( 'brutus-custom-catalog-style', get_template_directory_uri() . '/css/page-katalogos.css' );
 	wp_enqueue_style( 'brutus-custom-single-artefact-post-style', get_template_directory_uri() . '/css/single-artefacts.css' );
 	wp_enqueue_style( 'brutus-404-style', get_template_directory_uri() . '/css/404.css' );
+	wp_enqueue_style( 'brutus-about-page-style', get_template_directory_uri() . '/css/page-sxetika.css' );
 }
 add_action( 'wp_enqueue_scripts', add_custom_styles );
 
@@ -176,7 +177,7 @@ function set_custom_templates() {
 	update_post_meta( $catalog_english_page_id, '_wp_page_template', 'page-katalogos.php' );
 	update_post_meta( $about_english_page_id, '_wp_page_template', 'page-sxetika.php' );
 }
-add_action( 'set_custom_templates', set_custom_templates );
+add_action( 'init', set_custom_templates );
 
 /**
  * Create a custom post type for artefacts.
