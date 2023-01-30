@@ -69,14 +69,8 @@
 
 /* Button for Catalog (EN and ΕΛ) */
 #menu-item-563, #menu-item-564 {
-	border-style: solid;
-	border-width: 2px;
-	border-color: black;
-
-	width: 40%;
-	margin: auto;
-	margin-top: 0.75em;
-	padding: 0.2rem;
+	border: 2px solid black;
+	margin: 1rem 1rem 0 1rem;
 }
 
 /* Desktop */
