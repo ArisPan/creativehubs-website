@@ -30,7 +30,20 @@ get_header();
                 </ol>
                 <p><?php esc_html_e( 'Στο πλαίσιο υλοποίησης του έργου, 8 κτίρια θα μετατραπούν σε ανακαινισμένα και λειτουργικά παρεμβατικά κέντρα, τα οποία θα λειτουργήσουν ως νέοι κόμβοι και θερμοκοιτίδες στις περιφέρειες όλων των εταίρων με πλήρη διοικητική υποστήριξη, καθώς και πλήρη υποστήριξη δομών και δικτύων διασυνοριακής συνεργασίας που σχετίζονται με την καινοτομία.', 'brutus' ) ?></p>
             </div>
-            <div class="partners-content"></div>
+            <div class="partners-content">
+                <a href="https://www.pde.gov.gr/" target="_blank">
+                    <img src="https://creativehubs.gr/wp-content/uploads/2023/01/Region-of-Western-Greece.png" alt="Region of Western Greece logo">
+                </a>
+                <a href="https://pin.gov.gr/" target="_blank">
+                    <img src="https://creativehubs.gr/wp-content/uploads/2023/01/Region-of-Ionian-Islands.png" alt="Region of Ionian Islands logo">
+                </a>
+                <a href="http://www.php.gov.gr/" target="_blank">
+                    <img src="https://creativehubs.gr/wp-content/uploads/2023/01/Region-of-Epirus.png" alt="Region of Epirus logo">
+                </a>
+                <a href="https://www.regione.puglia.it/" target="_blank">
+                    <img src="https://creativehubs.gr/wp-content/uploads/2023/01/Puglia-Region.png" alt="Region of Puglia logo">
+                </a>
+            </div>
         </div>
     </div>
 </main> <!-- .site-main -->
