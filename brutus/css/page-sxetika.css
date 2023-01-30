@@ -3,4 +3,82 @@
 .about-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
+    border: 1px solid black;
+    min-height: 65dvh;
+}
+
+/* Categories */
+.category-container {
+    border-right: 1px solid black;
+}
+
+.summary-button,
+.partners-button {
+    border-bottom: 1px solid black;
+    padding: 0.5rem 0.8rem;
+    cursor: pointer;
+}
+
+/* Arrows on category buttons */
+.summary-button::before,
+.partners-button::before {
+    --block-expand-arrow-size: 0.7rem;
+
+    background-image: url(https://creativehubs.gr/wp-content/uploads/2023/01/select-arrow.png);
+    content: "";
+
+    position: relative;
+    width: var(--block-expand-arrow-size);
+    height: var(--block-expand-arrow-size);
+    background-size: var(--block-expand-arrow-size);
+    background-repeat: no-repeat;
+
+    display: inline-block;
+    left: calc(100% - 1rem);
+    z-index: 2;
+
+    transition: .1s;
+    transform: rotate(-90deg);
+}
+
+.summary-button.active::before,
+.partners-button.active::before {
+    transform: rotate(90deg);
+}
+
+/* Content */
+.content-container {
+    max-height: 65dvh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0 1rem 1rem 1rem;
+    text-align: justify;
+}
+
+.summary-content p:first-child {
+    margin-top: 0.5rem;
+}
+
+.summary-content {
+    display: none;
+    transition: all .3s;
+}
+
+.summary-content.active {
+    display: block;
+}
+
+/* Scrollbar */
+.content-container::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: white;
+}
+
+.content-container::-webkit-scrollbar-track {
+    border-left: 1px solid black;
+    background-color: white;
+}
+
+.content-container::-webkit-scrollbar-thumb {
+    background-color: black;
 }
