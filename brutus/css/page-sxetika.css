@@ -1,125 +1,196 @@
 /* About page styles
 	 ========================================================================== */
-.about-container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    border: 1px solid black;
-    min-height: 65dvh;
+/* Mobile */
+@media only screen and (max-width: 767px) {
+
+    .summary-button,
+    .partners-button {
+        display: none;
+    }
+
+    /* Headings for summary and partners content */
+    .heading-mobile {
+        font-weight: 200;
+        text-align: center;
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        margin: 0;
+    }
+
+    /* Project Summary */
+    .summary-content {
+        padding: 1rem;
+    }
+
+    .summary-content h2 {
+        font-weight: 200;
+    }
+
+    /* "Specific Objectives" list */
+    .summary-content ol {
+        margin: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .summary-content li {
+        margin-bottom: 1rem;
+    }
+
+    /* Partners */
+    .partners-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem;
+    }
+
+    .partners-content a {
+        margin-bottom: 2rem;
+    }
+
+    /* The first partner thumbnail is landscape and needs some padding */
+    .partners-content a:first-child img {
+        padding: 0 1rem;
+    }
+
+    /* For all the other square partner thumbnails */
+    .partners-content a:not(:first-child) {
+        width: 60%;
+        text-align: center;
+    }
 }
 
-/* Categories */
-.category-container {
-    border-right: 1px solid black;
-}
+/* Desktop */
+@media only screen and (min-width: 768px) {
+    .about-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        border: 1px solid black;
+        min-height: 65dvh;
+    }
+    
+    /* Categories */
+    .category-container {
+        border-right: 1px solid black;
+    }
+    
+    .summary-button,
+    .partners-button {
+        border-bottom: 1px solid black;
+        padding: 0.5rem 0.8rem;
+        cursor: pointer;
+    }
+    
+    /* Arrows on category buttons */
+    .summary-button::before,
+    .partners-button::before {
+        --block-expand-arrow-size: 0.7rem;
+    
+        background-image: url(https://creativehubs.gr/wp-content/uploads/2023/01/select-arrow.png);
+        content: "";
+    
+        position: relative;
+        width: var(--block-expand-arrow-size);
+        height: var(--block-expand-arrow-size);
+        background-size: var(--block-expand-arrow-size);
+        background-repeat: no-repeat;
+    
+        display: inline-block;
+        left: calc(100% - 1rem);
+        z-index: -1;
+    
+        transition: .1s;
+        transform: rotate(-90deg);
+    }
+    
+    .summary-button.active::before,
+    .partners-button.active::before {
+        transform: rotate(90deg);
+    }
+    
+    /* Content */
+    .heading-mobile {
+        display: none;
+    }
 
-.summary-button,
-.partners-button {
-    border-bottom: 1px solid black;
-    padding: 0.5rem 0.8rem;
-    cursor: pointer;
-}
+    .content-container {
+        max-height: 65dvh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    
+    /* Added to content container on "Partners" button click */
+    /* Used to center the partners images within the content frame */
+    .content-container.partners-on {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    /* Summary */
+    .summary-content {
+        text-align: justify;
+        transition: all .3s;
+        padding: 0 1rem 1rem 1rem;
+    
+        display: none;
+    }
 
-/* Arrows on category buttons */
-.summary-button::before,
-.partners-button::before {
-    --block-expand-arrow-size: 0.7rem;
+    .summary-content p:first-child {
+        margin-top: 0.5rem;
+    }
 
-    background-image: url(https://creativehubs.gr/wp-content/uploads/2023/01/select-arrow.png);
-    content: "";
-
-    position: relative;
-    width: var(--block-expand-arrow-size);
-    height: var(--block-expand-arrow-size);
-    background-size: var(--block-expand-arrow-size);
-    background-repeat: no-repeat;
-
-    display: inline-block;
-    left: calc(100% - 1rem);
-    z-index: -1;
-
-    transition: .1s;
-    transform: rotate(-90deg);
-}
-
-.summary-button.active::before,
-.partners-button.active::before {
-    transform: rotate(90deg);
-}
-
-/* Content */
-.content-container {
-    max-height: 65dvh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
-/* Added to content container on "Partners" button click */
-/* Used to center the partners images within the content frame */
-.content-container.partners-on {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-/* Summary */
-.summary-content p:first-child {
-    margin-top: 0.5rem;
-}
-
-.summary-content {
-    text-align: justify;
-    transition: all .3s;
-    padding: 0 1rem 1rem 1rem;
-
-    display: none;
-}
-
-.summary-content.active {
-    display: block;
-}
-
-/* Partners */
-.partners-content {
-    display: none;
-}
-
-.partners-content.active {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr;
-}
-
-.partners-content a {
-    text-align: center;
-}
-
-.partners-content a:first-child {
-    grid-column-start: 1;
-    grid-column-end: 4;
-
-    margin-bottom: 2rem;
-}
-
-.partners-content a:first-child img {
-    max-width: 40%;
-}
-
-.partners-content img {
-    max-width: 50%;
-    margin: auto;
-}
-
-/* Scrollbar */
-.content-container::-webkit-scrollbar {
-    width: 0.5rem;
-    background-color: white;
-}
-
-.content-container::-webkit-scrollbar-track {
-    border-left: 1px solid black;
-    background-color: white;
-}
-
-.content-container::-webkit-scrollbar-thumb {
-    background-color: black;
+    .summary-content h2 {
+        font-weight: 300;
+    }
+    
+    .summary-content.active {
+        display: block;
+    }
+    
+    /* Partners */
+    .partners-content {
+        display: none;
+    }
+    
+    .partners-content.active {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 1fr;
+    }
+    
+    .partners-content a {
+        text-align: center;
+    }
+    
+    .partners-content a:first-child {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    
+        margin-bottom: 2rem;
+    }
+    
+    .partners-content a:first-child img {
+        max-width: 40%;
+    }
+    
+    .partners-content img {
+        max-width: 50%;
+        margin: auto;
+    }
+    
+    /* Scrollbar */
+    .content-container::-webkit-scrollbar {
+        width: 0.5rem;
+        background-color: white;
+    }
+    
+    .content-container::-webkit-scrollbar-track {
+        border-left: 1px solid black;
+        background-color: white;
+    }
+    
+    .content-container::-webkit-scrollbar-thumb {
+        background-color: black;
+    }
 }
