@@ -35,7 +35,7 @@
 
     display: inline-block;
     left: calc(100% - 1rem);
-    z-index: 2;
+    z-index: -1;
 
     transition: .1s;
     transform: rotate(-90deg);
@@ -51,21 +51,62 @@
     max-height: 65dvh;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding: 0 1rem 1rem 1rem;
-    text-align: justify;
 }
 
+/* Added to content container on "Partners" button click */
+/* Used to center the partners images within the content frame */
+.content-container.partners-on {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Summary */
 .summary-content p:first-child {
     margin-top: 0.5rem;
 }
 
 .summary-content {
-    display: none;
+    text-align: justify;
     transition: all .3s;
+    padding: 0 1rem 1rem 1rem;
+
+    display: none;
 }
 
 .summary-content.active {
     display: block;
+}
+
+/* Partners */
+.partners-content {
+    display: none;
+}
+
+.partners-content.active {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+}
+
+.partners-content a {
+    text-align: center;
+}
+
+.partners-content a:first-child {
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    margin-bottom: 2rem;
+}
+
+.partners-content a:first-child img {
+    max-width: 40%;
+}
+
+.partners-content img {
+    max-width: 50%;
+    margin: auto;
 }
 
 /* Scrollbar */
