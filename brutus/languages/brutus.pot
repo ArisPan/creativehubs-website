@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-01-06T19:14:42+00:00\n"
+"POT-Creation-Date: 2023-01-30T19:33:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: brutus\n"
@@ -32,20 +32,11 @@ msgid "Underscores.me"
 msgstr ""
 
 #: 404.php:17
-msgid "Oops! That page can&rsquo;t be found."
+msgid "Δεν υπάρχει."
 msgstr ""
 
 #: 404.php:21
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
-msgstr ""
-
-#: 404.php:30
-msgid "Most Used Categories"
-msgstr ""
-
-#. translators: %1$s: smiley
-#: 404.php:48
-msgid "Try looking in the monthly archives. %1$s"
+msgid "Εντάξει"
 msgstr ""
 
 #. translators: 1: title.
@@ -65,31 +56,31 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: front-page.php:35
+#: front-page.php:36
 msgid "Ολιστική δικτύωση δημιουργικών ΜμΕ μέσω συνεργατικών χώρων δημιουργικών επιχειρήσεων"
 msgstr ""
 
-#: front-page.php:42
+#: front-page.php:43
 msgid "Ολιστική δικτύωση δημιουργικών ΜμΕ"
 msgstr ""
 
-#: front-page.php:45
+#: front-page.php:46
 msgid "μέσω συνεργατικών χώρων δημιουργικών επιχειρήσεων"
 msgstr ""
 
-#: front-page.php:62
+#: front-page.php:64
 msgid "Κατάλογος"
 msgstr ""
 
-#: front-page.php:63
+#: front-page.php:65
 msgid "Δες τον κατάλογο"
 msgstr ""
 
-#: front-page.php:65
+#: front-page.php:69
 msgid "Σχετικά"
 msgstr ""
 
-#: front-page.php:66
+#: front-page.php:70
 msgid "Μάθε περισσότερα"
 msgstr ""
 
@@ -103,6 +94,226 @@ msgstr ""
 
 #: functions.php:127
 msgid "Add widgets here."
+msgstr ""
+
+#: functions.php:201
+msgctxt "Post type general name"
+msgid "Artefacts"
+msgstr ""
+
+#: functions.php:202
+msgctxt "Post type singular name"
+msgid "Artefact"
+msgstr ""
+
+#: functions.php:203
+#: functions.php:204
+msgid "Artefacts"
+msgstr ""
+
+#: functions.php:205
+msgid "Add New"
+msgstr ""
+
+#: functions.php:206
+msgid "Add New Artefact"
+msgstr ""
+
+#: functions.php:207
+msgid "Edit Artefact"
+msgstr ""
+
+#: functions.php:208
+msgid "Update Artefact"
+msgstr ""
+
+#: functions.php:209
+msgid "View Artefact"
+msgstr ""
+
+#: functions.php:210
+msgid "All Artefacts"
+msgstr ""
+
+#: functions.php:211
+msgid "Search Artefacts"
+msgstr ""
+
+#: functions.php:212
+msgid "No artefacts found"
+msgstr ""
+
+#: functions.php:216
+msgid "artefacts"
+msgstr ""
+
+#: functions.php:218
+msgid "Artefacts of Region of Epirus"
+msgstr ""
+
+#: functions.php:252
+msgctxt "Taxonomy type general name"
+msgid "Προελεύσεις"
+msgstr ""
+
+#: functions.php:253
+msgctxt "Taxonomy type singular name"
+msgid "Προέλευση"
+msgstr ""
+
+#: functions.php:254
+msgid "Αναζήτηση στις Προελεύσεις"
+msgstr ""
+
+#: functions.php:255
+msgid "Δημοφιλείς Προελεύσεις"
+msgstr ""
+
+#: functions.php:256
+msgid "Όλες οι Προελεύσεις"
+msgstr ""
+
+#: functions.php:259
+msgid "Επεξεργασία Προέλευσης"
+msgstr ""
+
+#: functions.php:260
+msgid "Ενημέρωση Προέλευσης"
+msgstr ""
+
+#: functions.php:261
+msgid "Προσθήκη Προέλευσης"
+msgstr ""
+
+#: functions.php:262
+msgid "Όνομα Νέας Προέλευσης"
+msgstr ""
+
+#: functions.php:263
+msgid "Διαχωρισμός Προελεύσεων με Κόμμα"
+msgstr ""
+
+#: functions.php:264
+msgid "Προσθήκη ή Αφαίρεση Προέλευσης"
+msgstr ""
+
+#: functions.php:265
+msgid "Επιλογή Μεταξύ των Δημοφιλέστερων Προελεύσεων"
+msgstr ""
+
+#: functions.php:266
+#: page-katalogos.php:37
+msgid "Προέλευση"
+msgstr ""
+
+#: functions.php:296
+msgctxt "Taxonomy type general name"
+msgid "Περίοδοι"
+msgstr ""
+
+#: functions.php:297
+msgctxt "Taxonomy type singular name"
+msgid "Περίοδος"
+msgstr ""
+
+#: functions.php:298
+msgid "Αναζήτηση στις Περιόδους"
+msgstr ""
+
+#: functions.php:299
+msgid "Δημοφιλείς Περίοδοι"
+msgstr ""
+
+#: functions.php:300
+msgid "Όλες οι Περίοδοι"
+msgstr ""
+
+#: functions.php:303
+msgid "Επεξεργασία Περιόδου"
+msgstr ""
+
+#: functions.php:304
+msgid "Ενημέρωση Περιόδου"
+msgstr ""
+
+#: functions.php:305
+msgid "Προσθήκη Περιόδου"
+msgstr ""
+
+#: functions.php:306
+msgid "Όνομα Νέας Περιόδου"
+msgstr ""
+
+#: functions.php:307
+msgid "Διαχωρισμός Περιόδων με Κόμμα"
+msgstr ""
+
+#: functions.php:308
+msgid "Προσθήκη ή Αφαίρεση Περιόδου"
+msgstr ""
+
+#: functions.php:309
+msgid "Επιλογή Μεταξύ των Δημοφιλέστερων Περιόδων"
+msgstr ""
+
+#: functions.php:310
+#: page-katalogos.php:53
+msgid "Περίοδος"
+msgstr ""
+
+#: functions.php:340
+msgctxt "Taxonomy type general name"
+msgid "Υλικά"
+msgstr ""
+
+#: functions.php:341
+msgctxt "Taxonomy type singular name"
+msgid "Υλικό"
+msgstr ""
+
+#: functions.php:342
+msgid "Αναζήτηση στα Υλικά"
+msgstr ""
+
+#: functions.php:343
+msgid "Δημοφιλή Υλικά"
+msgstr ""
+
+#: functions.php:344
+msgid "Όλα τα Υλικά"
+msgstr ""
+
+#: functions.php:347
+msgid "Επεξεργασία Υλικού"
+msgstr ""
+
+#: functions.php:348
+msgid "Ενημέρωση Υλικού"
+msgstr ""
+
+#: functions.php:349
+msgid "Προσθήκη Υλικού"
+msgstr ""
+
+#: functions.php:350
+msgid "Όνομα Νέου Υλικού"
+msgstr ""
+
+#: functions.php:351
+msgid "Διαχωρισμός Υλικών με Κόμμα"
+msgstr ""
+
+#: functions.php:352
+msgid "Προσθήκη ή Αφαίρεση Υλικού"
+msgstr ""
+
+#: functions.php:353
+msgid "Επιλογή Μεταξύ των Δημοφιλέστερων Υλικών"
+msgstr ""
+
+#: functions.php:354
+#: page-katalogos.php:75
+msgid "Υλικό"
 msgstr ""
 
 #: header.php:28
@@ -151,6 +362,231 @@ msgstr ""
 #: inc/template-tags.php:100
 #: template-parts/content-page.php:39
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: page-katalogos.php:19
+msgid "Τι;"
+msgstr ""
+
+#: page-katalogos.php:20
+msgid "Ο ψηφιακός κατάλογος αποτελείται από ταξινομημένα και τεκμηριωμένα τεχνουργήματα της Περιφέρειας Ηπείρου."
+msgstr ""
+
+#: page-katalogos.php:23
+msgid "Γιατί;"
+msgstr ""
+
+#: page-katalogos.php:24
+msgid ""
+"Σκοπός του συλλεγόμενου υλικού είναι να βοηθήσει στον δημιουργικό σχεδιασμό. Τα μοτίβα που παρατηρούνται\n"
+"    στην παραδοσιακή χειροτεχνία μπορούν να διευκολύνουν τη διαδικασία της μετα-παραγωγής με αποτέλεσμα την\n"
+"    δημιουργία νέων αντικειμένων με ρίζες στους τρόπους μιας άλλης εποχής."
+msgstr ""
+
+#: page-katalogos.php:32
+msgid "Φίλτρα"
+msgstr ""
+
+#: page-katalogos.php:39
+msgid "Όλες οι προελεύσεις"
+msgstr ""
+
+#: page-katalogos.php:40
+msgid "Άρτα"
+msgstr ""
+
+#: page-katalogos.php:41
+msgid "Δωδώνη"
+msgstr ""
+
+#: page-katalogos.php:42
+msgid "Ζαγόρι"
+msgstr ""
+
+#: page-katalogos.php:43
+msgid "Θεσπρωτία"
+msgstr ""
+
+#: page-katalogos.php:44
+msgid "Ιωάννινα"
+msgstr ""
+
+#: page-katalogos.php:45
+msgid "Καστρίτσα"
+msgstr ""
+
+#: page-katalogos.php:46
+msgid "Μέτσοβο"
+msgstr ""
+
+#: page-katalogos.php:47
+msgid "Νικόπολη"
+msgstr ""
+
+#: page-katalogos.php:48
+msgid "Πωγώνι"
+msgstr ""
+
+#: page-katalogos.php:55
+msgid "Όλες οι περίοδοι"
+msgstr ""
+
+#: page-katalogos.php:56
+msgid "20ος Αιώνας μ.Χ."
+msgstr ""
+
+#: page-katalogos.php:57
+msgid "19ος Αιώνας μ.Χ."
+msgstr ""
+
+#: page-katalogos.php:58
+msgid "18ος Αιώνας μ.Χ."
+msgstr ""
+
+#: page-katalogos.php:59
+msgid "13ος Αιώνας μ.Χ."
+msgstr ""
+
+#: page-katalogos.php:60
+msgid "6ος Αιώνας μ.Χ."
+msgstr ""
+
+#: page-katalogos.php:61
+msgid "5ος Αιώνας μ.Χ."
+msgstr ""
+
+#: page-katalogos.php:62
+msgid "2ος Αιώνας μ.Χ."
+msgstr ""
+
+#: page-katalogos.php:63
+msgid "1ος Αιώνας μ.Χ."
+msgstr ""
+
+#: page-katalogos.php:64
+msgid "2ος Αιώνας π.Χ."
+msgstr ""
+
+#: page-katalogos.php:65
+msgid "3ος αιώνας π.Χ."
+msgstr ""
+
+#: page-katalogos.php:66
+msgid "4ος αιώνας π.Χ."
+msgstr ""
+
+#: page-katalogos.php:67
+msgid "5ος Αιώνας π.Χ."
+msgstr ""
+
+#: page-katalogos.php:68
+msgid "6ος Αιώνας π.Χ."
+msgstr ""
+
+#: page-katalogos.php:69
+msgid "7ος Αιώνας π.Χ."
+msgstr ""
+
+#: page-katalogos.php:70
+msgid "8ος Αιώνας π.Χ."
+msgstr ""
+
+#: page-katalogos.php:77
+msgid "Όλα τα υλικά"
+msgstr ""
+
+#: page-katalogos.php:78
+msgid "Ασβεστόλιθος"
+msgstr ""
+
+#: page-katalogos.php:79
+msgid "Ασήμι"
+msgstr ""
+
+#: page-katalogos.php:80
+msgid "Αυγοτέμπερα"
+msgstr ""
+
+#: page-katalogos.php:81
+msgid "Γυαλί"
+msgstr ""
+
+#: page-katalogos.php:82
+msgid "Ηφαιστειογενής Λίθος"
+msgstr ""
+
+#: page-katalogos.php:83
+msgid "Μαλλί"
+msgstr ""
+
+#: page-katalogos.php:84
+msgid "Μάρμαρο"
+msgstr ""
+
+#: page-katalogos.php:85
+msgid "Ξύλο"
+msgstr ""
+
+#: page-katalogos.php:86
+msgid "Πηλός"
+msgstr ""
+
+#: page-katalogos.php:87
+msgid "Πωρόλιθος"
+msgstr ""
+
+#: page-katalogos.php:88
+msgid "Τσόχα"
+msgstr ""
+
+#: page-katalogos.php:89
+msgid "Χαλκός"
+msgstr ""
+
+#: page-katalogos.php:93
+msgid "Αναζήτηση"
+msgstr ""
+
+#: page-katalogos.php:94
+msgid "Ψάξε"
+msgstr ""
+
+#: page-sxetika.php:18
+#: page-sxetika.php:23
+msgid "Περιγραφή Έργου"
+msgstr ""
+
+#: page-sxetika.php:19
+#: page-sxetika.php:36
+msgid "Εταίροι"
+msgstr ""
+
+#: page-sxetika.php:25
+msgid "Η Ελλάδα και η Ιταλία διαθέτουν σημαντικά πολιτιστικά και φυσικά κεφάλαια που είναι ικανά να συμβάλλουν στην ενίσχυση της οικονομικής τους ανάπτυξης και στην βελτίωση της ποιότητας ζωής των πολιτών."
+msgstr ""
+
+#: page-sxetika.php:26
+msgid "Ο στόχος του Creative@Hubs είναι η καθιέρωση της αυξημένης συνέργειας μεταξύ Δημιουργικών Βιομηχανιών και Δημοσίων Αρχών, προκειμένου να συμβάλλουν στην ικανότητα των Περιφερειών να δημιουργούν νέες τεχνογνωσίες και να παράγουν καινοτομία. Οι Δημιουργικές Βιομηχανίες (ΔΒ) - που περιλαμβάνουν διαφήμιση, μαρκετινγκ, αρχιτεκτονική, τέχνες και χειροτεχνίες, σχεδιασμό, μόδα, ταινία, βίντεο, φωτογραφία, μουσική, παραστατικές τέχνες, εκδόσεις, έρευνα & ανάπτυξη, λογισμικό, ηλεκτρονικά παιχνίδια, ηλεκτρονικές εκδόσεις και τηλεόραση / ραδιόφωνο - συγκαταλέγονται στους πιο δυναμικούς τομείς της παγκόσμιας οικονομίας, παρέχοντας νέες εκαιρίες στις αναπτυσσόμενες χώρες να προχωρήσουν σε αναδυόμενες περιοχές με υψηλή ανάπτυξη της παγκόσμιας οικονομίας. Τέλος θεωρούνται μια πολύ σημαντική πηγή εμπορικής και πολιτιστικής αξίας."
+msgstr ""
+
+#: page-sxetika.php:27
+msgid "Ειδικοί στόχοι"
+msgstr ""
+
+#: page-sxetika.php:29
+msgid "Ενθάρρυνση & υποστήριξη της συνεργασίας μέσω βέλτιστων συνεργειών μεταξύ διαφορετικών Αρχών, που είναι αρμόδιες για τις Δημιουργικές Βιομηχανίες."
+msgstr ""
+
+#: page-sxetika.php:30
+msgid "Βελτιώση της συνεργασίας στους τομείς επιλεγμένων περιοχών για την δημιουργία δημιουργικών επιχειρηματιών & πόρων στον τομέα των καινοτόμων βιομηχανιών και για την προώθηση της καινοτομίας μέσω των υφιστάμενων τοπικών συστημάτων (συστάδων, εργαστηριών, πανεπιστημίων, επιστημονικών πάρκων κ.λπ.)."
+msgstr ""
+
+#: page-sxetika.php:31
+msgid "Ενίσχυση της επιχειρηματικότητας στην ανάπτυξη νέων δημιουργικών προτύπων στις στοχευμένες Δημιουργικές Βιομηχανίες από ΜμΕ & δικτύωση τους, συγκεντρώνοντας πόρους που σχετίζονται με την ανάπτυξη τους."
+msgstr ""
+
+#: page-sxetika.php:33
+msgid "Στο πλαίσιο υλοποίησης του έργου, 8 κτίρια θα μετατραπούν σε ανακαινισμένα και λειτουργικά παρεμβατικά κέντρα, τα οποία θα λειτουργήσουν ως νέοι κόμβοι και θερμοκοιτίδες στις περιφέρειες όλων των εταίρων με πλήρη διοικητική υποστήριξη, καθώς και πλήρη υποστήριξη δομών και δικτύων διασυνοριακής συνεργασίας που σχετίζονται με την καινοτομία."
 msgstr ""
 
 #. translators: %s: search query.
