@@ -13,7 +13,7 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
-			<a id="title" href="https://greece-italy.eu/rlb-funded-projects/creativehubs/">Creative@Hubs</a>
+			<a id="title" href="https://greece-italy.eu/rlb-funded-projects/creativehubs/" target="_blank">Creative@Hubs</a>
 			<div class="social">
 				<a title="Facebook" id="facebook" target="_blank" href="<?php echo esc_url( __('https://www.facebook.com/InterregCreativeHubs/'), 'brutus' ) ?>">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
