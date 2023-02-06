@@ -67,6 +67,7 @@
         grid-template-columns: 1fr 2fr;
         border: 1px solid black;
         min-height: 65dvh;
+        min-height: 65vh;
     }
     
     /* Categories */
@@ -115,6 +116,7 @@
 
     .content-container {
         max-height: 65dvh;
+        max-height: 65vh;
         overflow-y: scroll;
         overflow-x: hidden;
     }
